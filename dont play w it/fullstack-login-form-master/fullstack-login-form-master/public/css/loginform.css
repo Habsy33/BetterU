@@ -53,7 +53,7 @@ body {
     color: #25676B;
     font-family: 'roboto', sans-serif;
     margin-top: 50px;
-    margin-left: 850px;
+    margin-left: 820px;
 }
 
 
@@ -116,7 +116,7 @@ input:focus::placeholder{
 }
 
 .link:hover{
-    color: #fff;
+    color: #000000;
 }
 
 .alert-box{

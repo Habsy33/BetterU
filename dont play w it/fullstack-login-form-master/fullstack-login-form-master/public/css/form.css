@@ -115,7 +115,7 @@ input:focus::placeholder{
 }
 
 .link:hover{
-    color: #fff;
+    color: #000000;
 }
 
 .alert-box{
