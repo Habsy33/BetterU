@@ -1,10 +1,67 @@
-img {
-    max-width: 25%;
-    height: auto;
-    display: block; /* Ensures the logo is treated as a block element */
-    margin: 0 auto; /* Centers the logo horizontally */
-}
-
 body {
-    background-color: #25676B;
-}
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logo img {
+    max-height: 40px;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .menu li:first-child {
+    margin-left: 0;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background-color: #25676B;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu li {
+      display: block;
+      margin: 10px 0;
+    }
+    .menu li:first-child {
+      margin-top: 0;
+    }
+    .menu-toggle input[type="checkbox"]:checked ~ .menu {
+      display: block;
+    }
+  }
+  
