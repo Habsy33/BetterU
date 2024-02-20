@@ -1,8 +1,9 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    height: 100%;
 }
 
 .navigation-container {
@@ -11,6 +12,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     margin: 20px;
+    height: 100%;
 }
 
 .navigation-box {
@@ -22,12 +24,13 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 0;
     margin-bottom: 10px;
 }
 
@@ -41,67 +44,66 @@ p {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #25676B;
     color: #fff;
-  }
-  
-  .logo img {
+}
+
+.logo img {
     max-height: 40px;
-  }
-  
-  .menu-toggle {
+}
+
+.menu-toggle {
     display: none;
-  }
-  
-  .menu {
+}
+
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .menu li {
+}
+
+.menu li {
     display: inline-block;
     margin-left: 20px;
-  }
-  
-  .menu li:first-child {
+}
+
+.menu li:first-child {
     margin-left: 0;
-  }
-  
-  .menu a {
+}
+
+.menu a {
     color: #fff;
     text-decoration: none;
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
     .menu-toggle {
-      display: block;
+        display: block;
     }
     .menu {
-      display: none;
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      background-color: #25676B;
-      padding: 10px;
-      border-radius: 5px;
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #25676B;
+        padding: 10px;
+        border-radius: 5px;
     }
     .menu li {
-      display: block;
-      margin: 10px 0;
+        display: block;
+        margin: 10px 0;
     }
     .menu li:first-child {
-      margin-top: 0;
+        margin-top: 0;
     }
     .menu-toggle input[type="checkbox"]:checked ~ .menu {
-      display: block;
+        display: block;
     }
-  }
-  
+}
