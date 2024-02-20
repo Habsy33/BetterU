@@ -1,0 +1,10 @@
+img {
+    max-width: 25%;
+    height: auto;
+    display: block; /* Ensures the logo is treated as a block element */
+    margin: 0 auto; /* Centers the logo horizontally */
+}
+
+body {
+    background-color: #25676B;
+}
