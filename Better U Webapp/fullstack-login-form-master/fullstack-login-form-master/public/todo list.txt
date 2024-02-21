@@ -1,0 +1,17 @@
+login and signup:
+backend stuff 
+- the webapp is loading from the homepage instead of going straight to the login page or sign-up.
+- make sure to store the users details as they log in so they can add, update and delete their information in the settings page.
+
+homepage
+-make different pages of the landing page clickable and join them to their corresponding pages
+-css everything
+-make the nav bar have a few featured pages
+
+....
+
+for the rest of the pages
+-css everything!! - make it look pretty
+-if there's a part of the page plan that is complex (requires js, or common sense (which you guys lack.. jk) then ask habeeb or jamie to fix it)
+-if there's any major issues put it in the group chat
+

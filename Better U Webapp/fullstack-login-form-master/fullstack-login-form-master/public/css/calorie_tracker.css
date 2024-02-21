@@ -3,6 +3,10 @@ body {
     font-family: Arial, sans-serif;
   }
   
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
