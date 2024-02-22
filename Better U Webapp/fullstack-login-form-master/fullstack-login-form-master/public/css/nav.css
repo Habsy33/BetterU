@@ -4,18 +4,21 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     height: 100%;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .navigation-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(45%, 1fr));
     gap: 10px;
     margin: 20px;
-    height: 100%;
+    height: calc(100vh - 80px); /* Adjusted height considering the navigation bar height */
+    overflow-y: auto; /* Enable scrolling for the grid if needed */
 }
 
 .navigation-box {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,13 +28,19 @@ body, html {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 100%;
+    overflow: hidden;
 }
 
 img {
     max-width: 100%;
-    height: auto;
+    height: 80%;
     border-radius: 0;
     margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.navigation-box:hover img {
+    opacity: 0;
 }
 
 p {
@@ -39,7 +48,15 @@ p {
     font-weight: bold;
     text-align: center;
     margin: 0;
+    transition: font-size 0.3s ease, transform 0.3s ease; /* Added transition for text enlargement and positioning */
 }
+
+.navigation-box:hover p {
+    font-size: 22px;
+    transform: translateY(-50%); /* Center text vertically */
+}
+
+
 
 body {
     margin: 0;
