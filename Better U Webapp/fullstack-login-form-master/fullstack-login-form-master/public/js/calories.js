@@ -38,7 +38,15 @@ function displayResults(data) {
         for (let i = 0; i < numResultsToDisplay; i++) {
             const hint = data.hints[i];
             const listItem = document.createElement('li');
-            listItem.textContent = `${hint.food.label} - Calories: ${Math.round(hint.food.nutrients.ENERC_KCAL)}`;
+
+            // Create a button for each item
+            const selectButton = document.createElement('button');
+            selectButton.textContent = `${hint.food.label} - Calories: ${Math.round(hint.food.nutrients.ENERC_KCAL)}kcal, Protein: ${Math.round(hint.food.nutrients.PROCNT)}g`;
+            selectButton.addEventListener('click', () => {
+                addToTotalCalories(hint.food.nutrients.ENERC_KCAL, hint.food.nutrients.PROCNT);
+            });
+
+            listItem.appendChild(selectButton);
             resultList.appendChild(listItem);
         }
 
@@ -48,7 +56,49 @@ function displayResults(data) {
     }
 }
 
+let totalCalories = 0; // Initialize the total calories variable
+let totalProtein = 0;
+
+function addToTotalCalories(ENERC_KCAL, PROCNT) {
+    Math.round(PROCNT)
+    totalCalories += ENERC_KCAL;
+    totalProtein +=  PROCNT;
+    console.log(totalProtein)
+    
+    updateTotalCaloriesDisplay();
+}
+
+function updateTotalCaloriesDisplay() {
+    const totalCaloriesDisplay = document.getElementById('totalCalories');
+    const totalProteinDisplay = document.getElementById('totalProtein');
+    totalCaloriesDisplay.textContent = `Total Calories: ${Math.round(totalCalories)}kcal`;
+    totalProteinDisplay.textContent = `Total Protein: ${Math.round(totalProtein)}g`;
+}
+
 function clearResults() {
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
 }
+
+// Add a click event listener for the reset button
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', () => {
+    resetTotalCalories();
+});
+
+// Function to reset the total calories
+function resetTotalCalories() {
+    totalCalories = 0;
+    totalProtein = 0;
+    updateTotalCaloriesDisplay();
+}
+
+// Function to update the total calories display
+function updateTotalCaloriesDisplay() {
+    const totalCaloriesDisplay = document.getElementById('totalCalories');
+    totalCaloriesDisplay.textContent = `Total Calories: ${Math.round(totalCalories)}kcal`;
+
+    const totalProteinDisplay = document.getElementById('totalProtein');
+    totalProteinDisplay.textContent = `Total Protein: ${Math.round(totalProtein)}g`;
+}
+
