@@ -69,3 +69,55 @@ body {
     }
   }
   
+  #resultsContainer {
+
+    margin-left:30px;
+  }
+
+  #resultsContainer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #resultsContainer li {
+    display: inline-block;
+    margin: 5px; /* Adjust margin as needed */
+    flex: 0 0 150px; /* Set a fixed width for each item */
+  }
+  
+  /* Style for buttons with the special-button class */
+  .special-button {
+    margin-top: 30px;
+    margin-right: 30px;
+    width: 175px;
+    height: 175px;
+    background-color: #0e8086; /* Red background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; /* Center text within the button */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide text overflow */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    filter: drop-shadow(7px 7px 3px #25676B);
+    word-break: break-word;
+  }
+  
+  /* Style for buttons with long text */
+  .special-button.long-text {
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  .special-button:hover {
+
+    transform: scale(1.2);
+    transition: transform 0.3s;
+  }
+  
+
+  

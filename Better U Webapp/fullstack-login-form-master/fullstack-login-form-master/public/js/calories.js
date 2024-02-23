@@ -41,10 +41,18 @@ function displayResults(data) {
 
             // Create a button for each item
             const selectButton = document.createElement('button');
-            selectButton.textContent = `${hint.food.label} - Calories: ${Math.round(hint.food.nutrients.ENERC_KCAL)}kcal, Protein: ${Math.round(hint.food.nutrients.PROCNT)}g`;
+            selectButton.innerHTML = `<strong>${hint.food.label}</strong><br><br><span style="font-size: smaller;">Calories: ${Math.round(hint.food.nutrients.ENERC_KCAL)}</span><br><span style="font-size: smaller;">Protein: ${Math.round(hint.food.nutrients.PROCNT)}g</span>`;
             selectButton.addEventListener('click', () => {
                 addToTotalCalories(hint.food.nutrients.ENERC_KCAL, hint.food.nutrients.PROCNT);
             });
+
+            // Add the class to the button for styling
+            selectButton.classList.add('special-button');
+
+            // Check if the text is long and add a specific class
+            if (selectButton.textContent.length > 20) {
+                selectButton.classList.add('long-text');
+            }
 
             listItem.appendChild(selectButton);
             resultList.appendChild(listItem);
@@ -55,6 +63,11 @@ function displayResults(data) {
         resultsContainer.textContent = 'No results found.';
     }
 }
+
+
+
+
+
 
 let totalCalories = 0; // Initialize the total calories variable
 let totalProtein = 0;
