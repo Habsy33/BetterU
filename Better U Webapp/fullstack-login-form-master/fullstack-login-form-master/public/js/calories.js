@@ -1,7 +1,7 @@
 const apiKey = '91fba15f828371be49e664a480b46cd8';
 const appId = '5748bd3a';
 const endpoint = 'https://api.edamam.com/api/food-database/v2/parser';
-const MAX_RESULTS = 10;
+const MAX_RESULTS = 7;
 
 const searchInput = document.getElementById('foodInput');
 const searchButton = document.getElementById('searchButton');
