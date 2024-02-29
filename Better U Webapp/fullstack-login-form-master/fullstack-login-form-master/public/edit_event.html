@@ -7,20 +7,25 @@
     <title>Edit event</title>
     <link rel="stylesheet" href="css/edit_event.css">
 </head>
-<nav class="navbar">
-    <div>
-        <img src="img/BetterU_logo.png" class="logo" alt="BetterU logo">
-    </div>
-</nav>
 
-<div class="form">
-    <h1>Edit event</h1>
-    <input type="text" placeholder="Add title" class="text" required>
-    <input type="date" class="date" required> 
-    <input type="time" class="time">
-    <button class="reminder">Set reminder</button>
-    <input type="text" placeholder="Add note" class="text; note" required>
-    <button class="save_btn">Save</button>
-</div>
+<body>
+    <nav class="navbar">
+        <div>
+            <img src="img/BetterU_logo.png" class="logo" alt="BetterU logo">
+        </div>
+    </nav>
+
+    <div class="form">
+        <h1>Edit event</h1>
+        <input type="text" placeholder="Add title" class="text" required>
+        <input type="date" class="date" required>
+        <input type="time" class="time">
+        <button class="reminder" onclick="toggleReminder()">Set reminder</button>
+        <input type="text" placeholder="Add note" class="text note" required>
+        <button class="save_btn" onclick="saveEvent()">Save</button>
+    </div>
+
+    <script src="js/edit_event.js"></script>
+</body>
 
 </html>
