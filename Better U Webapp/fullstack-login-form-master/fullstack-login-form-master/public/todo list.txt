@@ -11,7 +11,7 @@ homepage
 ....
 
 for the rest of the pages
--css everything!! - make it look pretty
+-css everything! - make it look pretty
 -if there's a part of the page plan that is complex (requires js, or common sense (which you guys lack.. jk) then ask habeeb or jamie to fix it)
 -if there's any major issues put it in the group chat
 
