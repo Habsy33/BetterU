@@ -39,17 +39,15 @@ function displayResults(data) {
             const hint = data.hints[i];
             const listItem = document.createElement('li');
 
-            // Create a button for each item
             const selectButton = document.createElement('button');
             selectButton.innerHTML = `<strong>${hint.food.label}</strong><br><br><span style="font-size: smaller;">Calories: ${Math.round(hint.food.nutrients.ENERC_KCAL)}</span><br><span style="font-size: smaller;">Protein: ${Math.round(hint.food.nutrients.PROCNT)}g</span>`;
             selectButton.addEventListener('click', () => {
-                addToTotalCalories(hint.food.nutrients.ENERC_KCAL, hint.food.nutrients.PROCNT);
+                addToTotalCalories(hint.food.nutrients.ENERC_KCAL, hint.food.nutrients.PROCNT, hint.food.label);
+                addSelectedItem(hint.food.label, hint.food.nutrients.PROCNT, hint.food.nutrients.ENERC_KCAL);
             });
 
-            // Add the class to the button for styling
             selectButton.classList.add('special-button');
 
-            // Check if the text is long and add a specific class
             if (selectButton.textContent.length > 20) {
                 selectButton.classList.add('long-text');
             }
@@ -64,8 +62,6 @@ function displayResults(data) {
     }
 }
 
-
-// Function to add selected item to the list
 function addSelectedItem(name, protein, calories) {
     const selectedItemsList = document.getElementById('selectedItemsList');
     const listItem = document.createElement('li');
@@ -73,30 +69,14 @@ function addSelectedItem(name, protein, calories) {
     selectedItemsList.appendChild(listItem);
 }
 
-// Modify the 'addToTotalCalories' function to also add the selected item
+let totalCalories = 0;
+let totalProtein = 0;
+
 function addToTotalCalories(ENERC_KCAL, PROCNT, name) {
     Math.round(PROCNT);
     totalCalories += ENERC_KCAL;
     totalProtein += PROCNT;
 
-    // Call the function to add the selected item to the list
-    addSelectedItem(name, PROCNT, ENERC_KCAL);
-
-    updateTotalCaloriesDisplay();
-}
-
-//new code
-
-
-let totalCalories = 0; // Initialize the total calories variable
-let totalProtein = 0;
-
-function addToTotalCalories(ENERC_KCAL, PROCNT) {
-    Math.round(PROCNT)
-    totalCalories += ENERC_KCAL;
-    totalProtein +=  PROCNT;
-    console.log(totalProtein)
-    
     updateTotalCaloriesDisplay();
 }
 
@@ -112,25 +92,25 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
-// Add a click event listener for the reset button
 const resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', () => {
     resetTotalCalories();
 });
 
-// Function to reset the total calories
 function resetTotalCalories() {
     totalCalories = 0;
     totalProtein = 0;
     updateTotalCaloriesDisplay();
 }
 
-// Function to update the total calories display
-function updateTotalCaloriesDisplay() {
-    const totalCaloriesDisplay = document.getElementById('totalCalories');
-    totalCaloriesDisplay.textContent = `Total Calories: ${Math.round(totalCalories)}kcal`;
+updateTotalCaloriesDisplay(); // Call this function to initialize the display
 
-    const totalProteinDisplay = document.getElementById('totalProtein');
-    totalProteinDisplay.textContent = `Total Protein: ${Math.round(totalProtein)}g`;
+const clearListButton = document.getElementById('clearListButton');
+clearListButton.addEventListener('click', () => {
+    clearSelectedItemsList();
+});
+
+function clearSelectedItemsList() {
+    const selectedItemsList = document.getElementById('selectedItemsList');
+    selectedItemsList.innerHTML = '';
 }
-

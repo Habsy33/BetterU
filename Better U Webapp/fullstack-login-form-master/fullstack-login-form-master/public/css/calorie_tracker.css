@@ -116,6 +116,7 @@ body {
   .special-button:hover {
 
     transform: scale(1.4);
+    background-color: #11949b;
     transition: transform 0.4s;
     font-size: 90%;
   }
@@ -162,11 +163,16 @@ body {
 }
 
 #calorieTrackingContainer {
-
   display: block;
   float: left;
   margin-left: 10%;
   margin-top: 20px;
   width: 38%;
+}
+
+#nutrientData {
+
+margin-top: 30px;
+
 }
   
