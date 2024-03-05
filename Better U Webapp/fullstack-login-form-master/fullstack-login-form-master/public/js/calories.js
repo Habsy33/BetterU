@@ -65,8 +65,27 @@ function displayResults(data) {
 }
 
 
+// Function to add selected item to the list
+function addSelectedItem(name, protein, calories) {
+    const selectedItemsList = document.getElementById('selectedItemsList');
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<strong>${name}</strong> | Protein: ${Math.round(protein)}g | Calories: ${Math.round(calories)}kcal`;
+    selectedItemsList.appendChild(listItem);
+}
 
+// Modify the 'addToTotalCalories' function to also add the selected item
+function addToTotalCalories(ENERC_KCAL, PROCNT, name) {
+    Math.round(PROCNT);
+    totalCalories += ENERC_KCAL;
+    totalProtein += PROCNT;
 
+    // Call the function to add the selected item to the list
+    addSelectedItem(name, PROCNT, ENERC_KCAL);
+
+    updateTotalCaloriesDisplay();
+}
+
+//new code
 
 
 let totalCalories = 0; // Initialize the total calories variable

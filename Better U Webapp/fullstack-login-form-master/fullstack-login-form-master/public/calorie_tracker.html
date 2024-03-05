@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Tracker</title>
     <link rel="stylesheet" href="css/calorie_tracker.css">
-
 </head>
-
-
-
 <body>
 
     <nav class="navbar">
@@ -29,48 +24,53 @@
         </ul>
     </nav>
 
-    
-
-    <center><h1>Calorie Tracker</h1>
-    <h2>Count your calories with ease using Better U's calorie tracker!</h2>
-    <ul>
-        <li>Step 1: Search and select the foods you foods you have eaten today.</li>
-        <li>Step 2: Click the "+" button the total foods you have eaten to your personal calories tracker.</li>
-        <li>Step 3: Click view calories tracker to see your nutritional breakdown daily and monthly. </li>
+<div id = calorieTrackingContainer>
+    <div id="calorieTrackingSearchBar">
+        <p>
+            <h1>Calorie Tracker</h1>
+            <hr>
+            <h2>Count your calories with ease using Better U's calorie tracker!</h2>
+            Step 1: Search and select the foods you have eaten today. <br>
+            Step 2: Click the "+" button to add the total foods you have eaten to your personal calories tracker. <br>
+            Step 3: Click view calories tracker to see your nutritional breakdown daily and monthly.  <br>
+            <br>
+            Pro tip: You can edit your daily total <b><u>here!</u></b>
+        </p>
+        
         <br>
-        <li>Pro tip: You can edit your daily total <b><u>here!</u></b></li>
-      </ul>
-
-    
-
-    <br>
-    <br>
-    <br>
-
-    <!-- Search input and button -->
-    <label for="foodInput">Enter Food:</label>
-    <input type="text" id="foodInput" placeholder="E.g., apple">
-    <button id="searchButton">Search</button>
-    <button id="clearButton">Clear Results</button>
-
-    <!-- Add this element where you want to display the total calories -->
-    <p id="totalCalories">Total Calories: 0kcal</p>
-    <p id="totalProtein">Total Protein: 0g</p>
-
-    <button id="resetButton">Reset Calories</button>
 
 
-    <!-- Display results container -->
-    <div id="resultsContainer">
-        <!-- Results will be displayed here -->
+        <hr>
+        <br>
+
+        <!-- Search input and button -->
+        <label for="foodInput">Enter Food:</label>
+        <input type="text" id="foodInput" placeholder="E.g., apple">
+        <button id="searchButton">Search</button>
+        <button id="clearButton">Clear Results</button>
+
+        <!-- Add this element where you want to display the total calories -->
+        <p id="totalCalories">Total Calories: 0kcal</p>
+        <p id="totalProtein">Total Protein: 0g</p>
+
+        <!-- Display results container -->
+        <div id="resultsContainer">
+            <!-- Results will be displayed here -->
+        </div>
+        <br> <br> <hr>
+        <button id="resetButton">Reset Calories</button>
+</div>
     </div>
+
+          <!-- Add this div where you want to display selected items -->
+          <div id="selectedItemsContainer">
+            <h1>Selected Items:</h1>
+            <hr>
+            <ul id="selectedItemsList"></ul>
+        </div>
 
     <!-- Link to your JavaScript file -->
     <script src="js\calories.js"></script>
 
-
-</center>
-
 </body>
-
 </html>

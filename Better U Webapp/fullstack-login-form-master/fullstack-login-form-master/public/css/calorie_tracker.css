@@ -74,10 +74,6 @@ body {
     }
   }
   
-  #resultsContainer {
-
-    margin-left:30px;
-  }
 
   #resultsContainer ul {
     list-style-type: none;
@@ -97,8 +93,8 @@ body {
   .special-button {
     margin-top: 30px;
     margin-right: 30px;
-    width: 175px;
-    height: 175px;
+    width: 90px;
+    height: 90px;
     background-color: #0e8086; /* Red background color */
     color: white;
     border: none;
@@ -108,7 +104,6 @@ body {
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide text overflow */
     font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
     filter: drop-shadow(7px 7px 3px #25676B);
     word-break: break-word;
   }
@@ -120,9 +115,58 @@ body {
 
   .special-button:hover {
 
-    transform: scale(1.2);
-    transition: transform 0.3s;
+    transform: scale(1.4);
+    transition: transform 0.4s;
+    font-size: 90%;
   }
   
+  #calorieTrackingSearchBar {
 
+    text-align:center;
+
+  }
+
+/* Add or update these styles in your existing CSS */
+
+#calorieTrackingSearchBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#selectedItemsContainer {
+  width: 30%; /* Adjust the width as needed */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+#selectedItemsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#selectedItemsList li {
+  margin-bottom: 10px;
+}
+
+/* New styles to position the selectedItemsContainer on the right side */
+#calorieTrackingSearchBar,
+#selectedItemsContainer {
+  display: inline-block;
+}
+
+#selectedItemsContainer {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10%;
+  text-align: center;
+  width: 38%;
+}
+
+#calorieTrackingContainer {
+
+  display: block;
+  float: left;
+  margin-left: 10%;
+  margin-top: 20px;
+  width: 38%;
+}
   
