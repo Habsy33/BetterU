@@ -58,7 +58,7 @@ app.post('/register-user', (req, res) => {
 app.post('/login-user', (req, res) => {
     const { email, password } = req.body;
 
-    db.select('id','name', 'email')
+    db.select('name', 'email')
     .from('users')
     .where({
         email: email,
