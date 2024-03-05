@@ -127,3 +127,30 @@ body {
 .edit-profile-btn:hover {
     background-color: #1c4e57;
 }
+
+
+.profile-logout{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 30px;
+    color: #25676B;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.profile-greeting{
+    font-family: 'dosis';
+    font-size: 40px;
+    color: #25676B;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-left: 100px;
+    margin-top: -610px;
+}
+

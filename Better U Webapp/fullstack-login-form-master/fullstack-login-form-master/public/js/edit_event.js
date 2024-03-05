@@ -19,6 +19,11 @@ function saveEvent() {
     const time = document.querySelector('.time').value;
     const note = document.querySelector('.text.note').value;
 
+    if (!title || !date || !note) {
+        alert('Please fill in all required fields (title, date, and note) before saving.');
+        return;
+    }
+
     // Create a combined date and time string
     const dateTimeString = `${date} ${time}`;
 
@@ -45,4 +50,10 @@ function saveEvent() {
 
     // Display an alert confirming that the event has been logged
     alert(`Event has been logged! The Reminder has been set: ${isReminderSet}`);
+}
+
+// Add the script tag to go back
+function goBack() {
+    // Go back to the previous page
+    window.history.back();
 }

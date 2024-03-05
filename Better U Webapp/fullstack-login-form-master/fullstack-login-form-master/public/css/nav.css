@@ -124,3 +124,51 @@ body {
         display: block;
     }
 }
+
+/* .container1{
+    position: relative;
+    width: 90%;
+    height: 87vh;
+    border: 5px solid #25676B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 30px;
+    color: #25676B;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.greeting{
+    font-family: 'dosis';
+    font-size: 50px;
+    color: #25676B;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-left: 100px;
+    margin-top: -600px;
+} */
+
+.greeting {
+     position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+     margin-left: 100px;
+        }
+.logout {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 1600px;
+    }

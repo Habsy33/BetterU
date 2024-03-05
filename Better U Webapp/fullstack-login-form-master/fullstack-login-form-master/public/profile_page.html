@@ -29,19 +29,31 @@
     <div class="main-content">
         <div class="profile-container">
             <div class="profile-image">
-                <img src="your_profile_image.jpg" alt="Profile Image">
-                <button class="change-icon-btn">Change Icon</button>
+                <img id="profileImage" src="img\duke dennis.jpg" alt="Profile Image">
+                <input type="file" id="fileInput" style="display: none;"> <!-- Add the file input -->
+                <button class="change-icon-btn" onclick="document.getElementById('fileInput').click();">Change Icon</button>
             </div>
             <div class="profile-details">
-                <div class="profile-box">Name: Arslan Kazmi</div>
-                <div class="profile-box">Gender: Male</div>
-                <div class="profile-box">Email: skazmi202@caledonian.ac.uk</div>
-                <div class="profile-box">Location: Glasgow, Scotland</div>
-                <div class="profile-box">Religion: Muslim</div>
+                <div class="profile-box profile-name"></div>
+                <div class="profile-box profile-gender"></div>
+                <div class="profile-box profile-email"></div>
+                <div class="profile-box profile-location"></div>
+                <div class="profile-box profile-religion"></div>
                 <button class="edit-profile-btn">Edit Profile</button>
-            </div>
+            </div>        
         </div>
     </div>
+
+
+
+    <div class="container2">
+        <button class="profile-logout">log out</button>
+        <h1 class="profile-greeting"></h1>
+    </div>
+
+
+    <!-- Include the profile JavaScript file -->
+    <script src="js/profile.js"></script>
 
 </body>
 </html>
