@@ -53,3 +53,13 @@ p {
 .active {
     background-color: #717171;
 }
+
+.slideshow-container{
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    border: 2px solid #ccc; /* Border style */
+    padding: 20px; /* Padding around the slideshow */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #e9e9e9; /* Background color */
+}
