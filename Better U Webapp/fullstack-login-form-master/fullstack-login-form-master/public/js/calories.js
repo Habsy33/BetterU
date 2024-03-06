@@ -7,6 +7,9 @@ const searchInput = document.getElementById('foodInput');
 const searchButton = document.getElementById('searchButton');
 const clearButton = document.getElementById('clearButton');
 
+// Array to store selected items
+let calorieInfo = [];
+
 searchButton.addEventListener('click', () => {
     const query = searchInput.value.trim();
 
@@ -63,10 +66,25 @@ function displayResults(data) {
 }
 
 function addSelectedItem(name, protein, calories) {
+    calorieInfo.push({
+        name: name,
+        protein: protein,
+        calories: calories
+    });
+
+    updateSelectedItemsList();
+    updateTotalCaloriesDisplay();
+}
+
+function updateSelectedItemsList() {
     const selectedItemsList = document.getElementById('selectedItemsList');
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `<strong>${name}</strong> | Protein: ${Math.round(protein)}g | Calories: ${Math.round(calories)}kcal`;
-    selectedItemsList.appendChild(listItem);
+    selectedItemsList.innerHTML = '';
+
+    calorieInfo.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<strong>${item.name}</strong> | Protein: ${Math.round(item.protein)}g | Calories: ${Math.round(item.calories)}kcal`;
+        selectedItemsList.appendChild(listItem);
+    });
 }
 
 let totalCalories = 0;
@@ -92,8 +110,7 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
-
-updateTotalCaloriesDisplay(); // Call this function to initialize the display
+updateTotalCaloriesDisplay();
 
 const clearListButton = document.getElementById('clearListButton');
 clearListButton.addEventListener('click', () => {
@@ -101,10 +118,10 @@ clearListButton.addEventListener('click', () => {
 });
 
 function clearSelectedItemsList() {
-    const selectedItemsList = document.getElementById('selectedItemsList');
-    selectedItemsList.innerHTML = '';
-
+    calorieInfo = [];
+    updateSelectedItemsList();
     totalCalories = 0;
     totalProtein = 0;
     updateTotalCaloriesDisplay();
 }
+
