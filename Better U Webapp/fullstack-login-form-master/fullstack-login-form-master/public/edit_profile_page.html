@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/edit_profile.css">
 </head>
 <body>
-
-    <h1>Edit your details</h1>
 
     <nav class="navbar">
         <a href="index.html">
@@ -29,33 +27,43 @@
     </nav>
 
     <div class="main-content">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img id="profileImage" src="img\duke dennis.jpg" alt="Profile Image">
-                <input type="file" id="fileInput" style="display: none;"> <!-- Add the file input -->
-                <button class="change-icon-btn" onclick="document.getElementById('fileInput').click();">Change Icon</button>
-            </div>
-            <div class="profile-details">
-                <div class="profile-box profile-name"></div>
-                <div class="profile-box profile-gender"></div>
-                <div class="profile-box profile-email"></div>
-                <div class="profile-box profile-location"></div>
-                <div class="profile-box profile-religion"></div>
-                <button class="edit-profile-btn">Edit Profile</button>
-            </div>        
+        <div class="edit-profile-container">
+            <h1>Edit Profile</h1>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="edit-profile-details">
+                    <label for="editName">Name:</label>
+                    <input type="text" id="editName" name="name" placeholder="Your Name">
+
+                    <label for="editGender">Gender:</label>
+                    <select id="editGender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email" placeholder="Your Email">
+
+                    <label for="editLocation">Location:</label>
+                    <input type="text" id="editLocation" name="location" placeholder="Your Location">
+
+                    <label for="editReligion">Religion:</label>
+                    <select id="editReligion" name="religion">
+                        <option value="Christian">Christian</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Jewish">Jewish</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="NoReligion">No religion</option>
+                        <option value="OtherReligion">Any other religion</option>
+                    </select>
+
+                    <button type="submit" class="save-profile-btn">Save Profile</button>
+                </div>
+            </form>
         </div>
     </div>
-
-
-
-    <div class="container2">
-        <button class="profile-logout">log out</button>
-        <h1 class="profile-greeting"></h1>
-    </div>
-
-
-    <!-- Include the profile JavaScript file -->
-    <script src="js/profile.js"></script>
 
 </body>
 </html>
