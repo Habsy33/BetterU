@@ -92,16 +92,6 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
-const resetButton = document.getElementById('resetButton');
-resetButton.addEventListener('click', () => {
-    resetTotalCalories();
-});
-
-function resetTotalCalories() {
-    totalCalories = 0;
-    totalProtein = 0;
-    updateTotalCaloriesDisplay();
-}
 
 updateTotalCaloriesDisplay(); // Call this function to initialize the display
 
@@ -113,4 +103,8 @@ clearListButton.addEventListener('click', () => {
 function clearSelectedItemsList() {
     const selectedItemsList = document.getElementById('selectedItemsList');
     selectedItemsList.innerHTML = '';
+
+    totalCalories = 0;
+    totalProtein = 0;
+    updateTotalCaloriesDisplay();
 }
