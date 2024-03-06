@@ -95,13 +95,6 @@ body {
     padding-left: 20px; /* Added padding for better spacing */
 }
 
-/* Make location and religion boxes side by side */
-.location-box,
-.religion-box {
-    flex: 1; /* Set flex to 1 for both boxes */
-    margin-right: 10px; /* Add some space between boxes */
-}
-
 .profile-box {
     background-color: #25676B;
     color: #fff;
@@ -112,24 +105,24 @@ body {
     flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
 }
 
-/* Edit profile button under the religion box */
 .edit-profile-btn {
-    background-color: #25676B;
+    background-color: #388a95;
     color: #fff;
     border: none;
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 10px; /* Add some space above the button */
+    margin:20px auto;
+    margin-top: 130px;
+    max-width: 200px;
 }
 
 .edit-profile-btn:hover {
-    background-color: #1c4e57;
+    background-color: #307d8a;
 }
 
-
-.profile-logout{
+.profile-logout {
     position: absolute;
     top: 80px;
     right: 0;
@@ -144,13 +137,14 @@ body {
     border: none;
 }
 
-.profile-greeting{
+.profile-greeting {
     font-family: 'dosis';
     font-size: 40px;
     color: #25676B;
     font-weight: 800;
     text-transform: capitalize;
-    margin-left: 100px;
-    margin-top: -610px;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    top: 80px;
 }
-
