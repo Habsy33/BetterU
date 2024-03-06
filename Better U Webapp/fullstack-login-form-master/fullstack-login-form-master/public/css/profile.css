@@ -1,9 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevent scrolling */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .navbar {
@@ -36,13 +43,33 @@ body {
 
 .menu li:first-child {
     margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(2) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(3) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(4) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
 }
 
 .menu a {
     color: #fff;
     text-decoration: none;
-}
 
+}
 .main-content {
     display: flex;
     justify-content: center;
