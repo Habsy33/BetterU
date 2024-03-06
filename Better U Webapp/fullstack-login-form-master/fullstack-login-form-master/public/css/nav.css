@@ -1,3 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #25676B;
+    color: #fff;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(2) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(3) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu li:nth-child(4) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -63,42 +135,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #25676B;
-    color: #fff;
-}
-
-.logo img {
-    max-height: 40px;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.menu li:first-child {
-    margin-left: 0;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-}
 
 @media screen and (max-width: 768px) {
     .menu-toggle {
