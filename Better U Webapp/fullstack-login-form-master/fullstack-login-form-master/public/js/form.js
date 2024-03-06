@@ -39,6 +39,12 @@ if(name == null){ // means login page is open
 } else{ // means register page is open
 
     submitBtn.addEventListener('click', () => {
+
+        if (!validateEmail(email.value)) {
+            alertBox("Invalid email format. Please use an email with a variation of '@mail.com'.");
+            return;
+        }
+
         fetch('/register-user', {
             method: 'post',
             headers: new Headers({'Content-Type': 'application/json'}),
@@ -76,3 +82,9 @@ const alertBox = (data) => {
         alertContainer.style.top = null;
     }, 5000);
 }
+
+const validateEmail = (email) => {
+    // A more flexible regex for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};

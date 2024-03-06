@@ -73,6 +73,40 @@ app.post('/login-user', (req, res) => {
     })
 })
 
+// // Delete user information
+// app.delete('/delete-user', (req, res) => {
+//     const { email } = req.body;
+
+//     db('users')
+//         .where({ email: email })
+//         .del()
+//         .then(() => {
+//             res.json('User deleted successfully');
+//         })
+//         .catch(err => {
+//             res.status(500).json('Error deleting user');
+//         });
+// });
+
+// // Update user information
+// app.put('/update-user', (req, res) => {
+//     const { email, newName, newPassword } = req.body;
+
+//     db('users')
+//         .where({ email: email })
+//         .update({
+//             name: newName,
+//             password: newPassword
+//         })
+//         .then(() => {
+//             res.json('User information updated successfully');
+//         })
+//         .catch(err => {
+//             res.status(500).json('Error updating user information');
+//         });
+// });
+
+
 app.listen(3000, (req, res) => {
     console.log('listening on port 3000......')
 })
