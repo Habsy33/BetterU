@@ -2,7 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-image: url('../img/sleepTrackerBackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(6px);
+
 }
 .container {
     max-width: 800px;
@@ -13,11 +18,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .logo {
-    width: 100px; /* Adjust width as needed */
+    width: 75%; /* Adjust width as needed */
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    border-radius: 25px;
 }
 h1 {
     text-align: center;
@@ -29,22 +35,34 @@ form {
     margin-bottom: 20px;
 }
 form input[type="date"], form input[type="time"], form input[type="number"] {
-    width: calc(50% - 5px);
+    margin-left:20%;
+    margin-right:20%;
+    width: 80%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    text-align: center;
 }
 form button {
-    width: 100%;
+    position: flex;
+    width: 40%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #2d9095;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-left:30%;
+    text-align: center;
+}
+
+form button:hover{
+
+    background-color: #40bbc1;
+
 }
 table {
     width: 100%;
@@ -57,9 +75,67 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 th {
-    background-color: #007bff;
+    background-color: #25676B;
     color: #fff;
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #25676B;
+    color: #fff;
+  }
+  
+  .logo img {
+    max-height: 40px;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .menu li:first-child {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+  }
+  
+  .menu li:nth-child(2) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+  }
+  
+  .menu li:nth-child(3) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+  }
+  
+  .menu li:nth-child(4) a {
+    margin-left: 0;
+    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
+    vertical-align: 15px; /* Adjust the vertical alignment */
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+  
 }

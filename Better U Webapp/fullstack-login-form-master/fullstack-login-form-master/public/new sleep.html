@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleep Tracker</title>
-    <link rel="stylesheet" href="new sleep css.css">
+    <link rel="stylesheet" href="css/new sleep css.css">
 </head>
 <body>
 
+    <nav class="navbar">
+        <a href="index.html">
+            <div class="logo">
+                <img src="img\BetterU_logo.png" alt="BetterU logo"> 
+            </div>
+        </a>
+        <div class="menu-toggle">
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">&#9776;</label>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><img>
+                <div class="logo">
+                    <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+<div id = "background">
 <div class="container">
-    <img src="sleep.png" alt="Sleep Tracker Logo" class="logo">
+    <img src="img/sleep.png" alt="Sleep Tracker Logo" class="logo">
     <h1>Sleep Tracker</h1>
     <form id="sleepForm">
         <input type="date" id="date" required>
@@ -46,7 +70,6 @@
 <!-- Include Chart.js library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="new sleep js.js"></script>
-
-
+</div>
 </body>
 </html>
