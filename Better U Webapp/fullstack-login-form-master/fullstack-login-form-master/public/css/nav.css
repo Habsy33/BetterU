@@ -18,6 +18,20 @@ h2 {
     font-weight: normal;
 }
 
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    color: #fff;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    color: #fff;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -209,9 +223,10 @@ body {
         }
 .logout {
         position: relative;
-        margin-top: 10px;
+        margin-top: 30px;
         margin-bottom: 10px;
-        margin-left: 1600px;
+        margin-left: 1435px;
+        padding: 10px;
     }
 
     body {
