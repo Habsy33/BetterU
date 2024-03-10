@@ -197,4 +197,22 @@ h2 {
 margin-top: 30px;
 
 }
+
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  margin-left: 30px;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2d9095;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #25676B;
+}
+
   

@@ -76,7 +76,7 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+
 }
 
 .navigation-container {
@@ -86,7 +86,7 @@ body, html {
     gap: 10px;
     margin: 20px;
     height: calc(100vh - 80px); /* Adjusted height considering the navigation bar height */
-    overflow-y: auto; /* Enable scrolling for the grid if needed */
+    /* overflow-y: auto; Enable vertical scrolling if content overflows the container */
 }
 
 .navigation-box {

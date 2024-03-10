@@ -62,7 +62,7 @@ form button {
     position: flex;
     width: 40%;
     padding: 10px;
-    background-color: #2d9095;
+    background-color: #25676B;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -162,4 +162,21 @@ tr:nth-child(even) {
   background-color: #f0f0f0; /* Background color for the insights box */
   border: 1px solid #ccc; /* Border to create a box-like appearance */
   text-align: center; /* Center text within the box */
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  margin-left: 30px;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2d9095;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #25676B;
 }
