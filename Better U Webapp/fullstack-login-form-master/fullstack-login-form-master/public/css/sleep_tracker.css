@@ -152,3 +152,14 @@ tr:nth-child(even) {
     text-decoration: none;
   
 }
+
+#sleepInsights {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto; /* Center the element horizontally with some top margin */
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #f0f0f0; /* Background color for the insights box */
+  border: 1px solid #ccc; /* Border to create a box-like appearance */
+  text-align: center; /* Center text within the box */
+}

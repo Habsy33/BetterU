@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Chart.js configuration
     const chartConfig = {
-        type: 'line', // Change this to 'line'
+        type: 'line',
         data: {
             labels: [],
             datasets: [{
@@ -72,7 +72,24 @@ document.addEventListener("DOMContentLoaded", function () {
         wakeUpTimeCell.textContent = wakeUpTime;
         hoursCell.textContent = `${hours}h ${minutes}m`; // Display hours and minutes
 
+        // Provide sleep insights
+        displaySleepInsights(hours + minutes / 60);
+
         // Clear the form inputs
         form.reset();
     });
+
+    function displaySleepInsights(hoursSlept) {
+        const insightsElement = document.getElementById('sleepInsights');
+        insightsElement.innerHTML = ''; // Clear previous insights
+
+        // Add insights based on sleep duration
+        if (hoursSlept < 7) {
+            insightsElement.innerHTML = '<p>Your sleep duration is lower than the recommended 7 hours for adults.</p>';
+        } else if (hoursSlept >= 7 && hoursSlept <= 9) {
+            insightsElement.innerHTML = '<p>Your sleep duration is within the recommended range of 7-9 hours for adults.</p>';
+        } else {
+            insightsElement.innerHTML = '<p>Your sleep duration is higher than the recommended 9 hours for adults.</p>';
+        }
+    }
 });
