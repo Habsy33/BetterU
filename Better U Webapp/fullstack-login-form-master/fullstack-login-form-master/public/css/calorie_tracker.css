@@ -215,4 +215,20 @@ margin-top: 30px;
   background-color: #25676B;
 }
 
+#progressBarContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#progressLabel {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#progressBar {
+  height: 20px;
+  background-color: #11949b; /* Progress bar color */
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
   

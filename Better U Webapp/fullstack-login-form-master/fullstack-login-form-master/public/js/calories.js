@@ -76,6 +76,33 @@ function addSelectedItem(name, protein, calories) {
     updateTotalCaloriesDisplay();
 }
 
+let dailyCalorieGoal = 2000; // Set your daily calorie goal
+
+function updateProgressBar() {
+    const progress = (totalCalories / dailyCalorieGoal) * 100;
+    const progressBar = document.getElementById('progressBar');
+    const progressPercentage = document.getElementById('progressPercentage');
+
+    if (progress <= 100) {
+        progressBar.style.width = `${progress}%`;
+        progressPercentage.textContent = `${Math.round(progress)}%`;
+    } else {
+        progressBar.style.width = '100%';
+        progressPercentage.textContent = '100%';
+        alert('You have exceeded the recommended daily calorie intake!');
+    }
+}
+
+function clearProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    const progressPercentage = document.getElementById('progressPercentage');
+
+    progressBar.style.width = '0%';
+    progressPercentage.textContent = '0%';
+}
+
+
+
 function updateSelectedItemsList() {
     const selectedItemsList = document.getElementById('selectedItemsList');
     selectedItemsList.innerHTML = '';
@@ -96,6 +123,7 @@ function addToTotalCalories(ENERC_KCAL, PROCNT, name) {
     totalProtein += PROCNT;
 
     updateTotalCaloriesDisplay();
+    updateProgressBar();
 }
 
 function updateTotalCaloriesDisplay() {
@@ -103,6 +131,7 @@ function updateTotalCaloriesDisplay() {
     const totalProteinDisplay = document.getElementById('totalProtein');
     totalCaloriesDisplay.textContent = `Total Calories: ${Math.round(totalCalories)}kcal`;
     totalProteinDisplay.textContent = `Total Protein: ${Math.round(totalProtein)}g`;
+    
 }
 
 function clearResults() {
@@ -123,5 +152,21 @@ function clearSelectedItemsList() {
     totalCalories = 0;
     totalProtein = 0;
     updateTotalCaloriesDisplay();
+    clearProgressBar();
 }
 
+const setGoalButton = document.getElementById('setGoalButton');
+const dailyCalorieGoalInput = document.getElementById('dailyCalorieGoal');
+
+setGoalButton.addEventListener('click', () => {
+    const userGoal = parseInt(dailyCalorieGoalInput.value);
+
+    if (!isNaN(userGoal) && userGoal > 0) {
+        // Update the daily calorie goal
+        dailyCalorieGoal = userGoal;
+        updateProgressBar(); // Update the progress bar with the new goal
+        alert(`Your daily calorie goal has been set to ${userGoal} kcal.`);
+    } else {
+        alert('Please enter a valid positive number for your daily calorie goal.');
+    }
+});
