@@ -128,3 +128,20 @@ input[type=text] {
     color: #25676B;
     background: #F9F8EB;
 }
+.back-button {
+    /* display: inline-block; */
+    margin: 20px;
+    margin-top: 20px;
+    margin-left: -1000px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2d9095;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #25676B;
+  }

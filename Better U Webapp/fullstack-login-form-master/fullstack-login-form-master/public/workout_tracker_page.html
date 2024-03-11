@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="css/workout.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">
+            <div class="logo">
+                <img src="img\BetterU_logo.png" alt="BetterU logo"> 
+            </div>
+        </a>
+        <div class="menu-toggle">
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">&#9776;</label>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services_page.html">Services</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+            <li><img>
+                <div class="logo">
+                    <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <a href="tracker_page.html" class="back-button">&#8592; Back</a>
+
+    <div class="container">
+        <h1>Workout Tracker</h1>
+        <p>Track your workouts and stay fit!</p>
+
+        <!-- Workout Form -->
+        <div id="workoutForm">
+            <label for="workoutType">Select Workout:</label>
+            <select id="workoutType">
+                <option value="cardio">Cardio</option>
+                <option value="strength">Strength Training</option>
+                <option value="flexibility">Flexibility</option>
+            </select>
+
+            <label for="workoutDuration">Duration (minutes):</label>
+            <input type="number" id="workoutDuration" min="1" required>
+
+            <button id="saveWorkout">Save Workout</button>
+        </div>
+
+        <!-- Workout History -->
+        <div id="workoutHistory">
+            <h2>Workout History</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="js/workout.js"></script>
+</body>
+</html>
