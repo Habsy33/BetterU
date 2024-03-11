@@ -45,6 +45,11 @@ if(name == null){ // means login page is open
             return;
         }
 
+        if (password.value.length < 6) {
+            alertBox("Password must be at least 6 characters long.");
+            return;
+        }
+
         fetch('/register-user', {
             method: 'post',
             headers: new Headers({'Content-Type': 'application/json'}),
