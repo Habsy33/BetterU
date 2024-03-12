@@ -96,6 +96,44 @@ h2 {
     }
   }
   
+  .button {
+    position: relative;
+    display: inline-block;
+    margin: 5px; /* Adjust margin as needed */
+  }
+  
+  .button a {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size */
+    text-align: center;
+    text-decoration: none;
+    background-color: #006C68;
+    display: block;
+    position: relative;
+    padding: 4px 8px; /* Adjust padding */
+    border: none; /* Remove border */
+  }
+  
+  .button a:active {
+    top: 2px; /* Adjust the active state position */
+    background-color: #013D3A;
+    -webkit-box-shadow: inset 0 1px 0, inset 0 -1px 0; /* Adjust box shadow */
+    -moz-box-shadow: inset 0 1px 0, inset 0 -1px 0;
+    box-shadow: inset 0 1px 0, inset 0 -1px 0;
+  }
+  
+  .button:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 2px; /* Adjust padding */
+    position: absolute;
+  }
+  
+  
+  
 
   #resultsContainer ul {
     list-style-type: none;
@@ -196,23 +234,6 @@ h2 {
 
 margin-top: 30px;
 
-}
-
-.back-button {
-  display: inline-block;
-  margin: 20px;
-  margin-left: 30px;
-  padding: 10px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #2d9095;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.back-button:hover {
-  background-color: #25676B;
 }
 
 #progressBarContainer {

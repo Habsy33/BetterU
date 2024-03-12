@@ -1,103 +1,77 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 60px;
     font-weight: bold;
-}
-
-.heading {
-    font-size: 60px;
-    font-weight: bold;
-}
-
-h2 {
+    padding-left: 30px;
+  }
+  
+  h2 {
     font-size: 20px;
     font-weight: normal;
-}
-
-h3 {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px;
-    color: #fff;
-}
-
-h4 {
-    font-size: 30px;
-    font-weight: bold;
-    padding: 20px;
-    color: #fff;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #25676B;
     color: #fff;
-}
-
-.logo img {
+  }
+  
+  .logo img {
     max-height: 40px;
-}
-
-.menu-toggle {
+  }
+  
+  .menu-toggle {
     display: none;
-}
-
-.menu {
+  }
+  
+  .menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.menu li {
+  }
+  
+  .menu li {
     display: inline-block;
     margin-left: 20px;
-}
-
-.menu li:first-child {
+  }
+  
+  .menu li:first-child {
     margin-left: 0;
     margin-top: -5px; /* Add a negative margin-top to move the text higher up */
     vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(2) a {
+  }
+  
+  .menu li:nth-child(2) a {
     margin-left: 0;
     margin-top: -5px; /* Add a negative margin-top to move the text higher up */
     vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(3) a {
+  }
+  
+  .menu li:nth-child(3) a {
     margin-left: 0;
     margin-top: -5px; /* Add a negative margin-top to move the text higher up */
     vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(4) a {
+  }
+  
+  .menu li:nth-child(4) a {
     margin-left: 0;
     margin-top: -5px; /* Add a negative margin-top to move the text higher up */
     vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu a {
+  }
+  
+  .menu a {
     color: #fff;
     text-decoration: none;
-
-}
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    height: 100%;
-
-}
-
+  
+  }
+    
 .navigation-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
@@ -145,13 +119,6 @@ p {
 .navigation-box:hover p {
     font-size: 22px;
     transform: translateY(-50%); /* Center text vertically */
-}
-
-
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
 
