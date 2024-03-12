@@ -20,16 +20,18 @@
         </div>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
             <li><img>
                 <div class="logo">
-                    <img src="img\profile_icon_updated.png" alt="Profile Icon"> 
+                    <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
                 </div>
             </li>
         </ul>
     </nav>
+
+    <a href="index.html" class="back-button">&#8592; Back</a>
 
 <div id = calorieTrackingContainer>
     <div id="calorieTrackingSearchBar">
@@ -75,6 +77,16 @@
         <p id="totalCalories">Total Calories: 0kcal</p>
         <p id="totalProtein">Total Protein: 0g</p>
         <button id="clearListButton">Clear List</button>
+
+        <label for="dailyCalorieGoal">Set Daily Calorie Goal:</label>
+<input type="number" id="dailyCalorieGoal" placeholder="Enter your goal">
+<button id="setGoalButton">Set Goal</button>
+
+        </div>
+
+        <div id="progressBarContainer">
+            <p id="progressLabel">Progress: <span id="progressPercentage">0%</span></p>
+            <div id="progressBar"></div>
         </div>
 
         </div>
