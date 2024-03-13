@@ -169,6 +169,16 @@ setGoalButton.addEventListener('click', () => {
     } else {
         alert('Please enter a valid positive number for your daily calorie goal.');
     }
+
+    // Add an event listener to the date input to update the date
+const selectedDateInput = document.getElementById('selectedDate');
+selectedDateInput.addEventListener('change', () => {
+    const selectedDate = selectedDateInput.value;
+    console.log(`Selected Date: ${selectedDate}`);
+    // Perform any actions you need with the selected date
+});
+
+
 });
 
 
