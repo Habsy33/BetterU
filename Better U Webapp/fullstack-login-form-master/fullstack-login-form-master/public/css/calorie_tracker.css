@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-image: url("../img/calorieTrackerBackground.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -209,17 +211,23 @@ h2 {
 #selectedItemsContainer {
   float: right;
   margin-top: 20px;
-  margin-right: 10%;
+  margin-right: 2rem;
   text-align: center;
-  width: 38%;
+  width: 40%;
+  background-color: rgb(250, 245, 245);
+  border-radius: 1rem;
+  padding:2rem;
 }
 
 #calorieTrackingContainer {
   display: block;
   float: left;
-  margin-left: 10%;
+  margin-left:2rem;
   margin-top: 20px;
-  width: 38%;
+  width: 43%;
+  background-color: rgb(250, 245, 245);
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 #nutrientData {
@@ -246,3 +254,11 @@ margin-top: 30px;
   margin-bottom:50px
 }
   
+.text-input {
+  border: 1px solid #ccc; /* Set border color */
+  border-radius: 5px; /* Set border radius for rounded edges */
+  padding: 8px; /* Adjust padding as needed */
+  width: 33%; /* Set width to fill container */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  color: #333; /* Set text color */
+}

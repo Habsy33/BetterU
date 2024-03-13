@@ -50,47 +50,46 @@
         <hr>
         <br>
 
-        <!-- Search input and button -->
-        <label for="foodInput">Enter Food:</label>
-        <input type="text" id="foodInput" placeholder="E.g., apple">
-        <button id="searchButton" class="button1">Search</button>
-        <button id="clearButton" class="button1">Clear Results</button>
+<!-- Search input and button -->
+<label for="foodInput">Enter Food:</label>
+<input type="text" id="foodInput" class="text-input" placeholder="E.g., apple">
+<button id="searchButton" class="button1">Search</button>
+<button id="clearButton" class="button1">Clear Results</button>
 
-
-        <!-- Display results container -->
-        <div id="resultsContainer">
-            <!-- Results will be displayed here -->
-        </div>
-        <br> <br> <hr>
+<!-- Display results container -->
+<div id="resultsContainer">
+    <!-- Results will be displayed here -->
 </div>
-    </div>
 
-          <!-- Add this div where you want to display selected items -->
-          <div id="selectedItemsContainer">
-            <h1>Selected Items:</h1>
-            <hr>
-            <ul id="selectedItemsList"></ul>
-        <div id= "nutrientData">
-            <hr>
+<br> <br> <hr>
+</div>
+</div>
+
+<!-- Add this div where you want to display selected items -->
+<div id="selectedItemsContainer">
+    <h1>Selected Items:</h1>
+    <hr>
+    <ul id="selectedItemsList"></ul>
+    <div id="nutrientData">
+        <hr>
         <p id="totalCalories">Total Calories: 0kcal</p>
         <p id="totalProtein">Total Protein: 0g</p>
         <button id="clearListButton" class="button1">Clear List</button>
 
         <label for="dailyCalorieGoal">Set Daily Calorie Goal:</label>
-<input type="number" id="dailyCalorieGoal" placeholder="Enter your goal">
-<button id="setGoalButton" class="button1">Set Goal</button>
+        <input type="number" id="dailyCalorieGoal" class="text-input" placeholder="Enter your goal">
+        <button id="setGoalButton" class="button1">Set Goal</button>
+    </div>
 
-        </div>
 
-        <div id="progressBarContainer">
-            <p id="progressLabel">Progress: <span id="progressPercentage">0%</span></p>
-            <div id="progressBar"></div>
-        </div>
+    <div id="progressBarContainer">
+        <p id="progressLabel">Progress: <span id="progressPercentage">0%</span></p>
+        <div id="progressBar"></div>
+    </div>
+</div>
 
-        </div>
-
-    <!-- Link to your JavaScript file -->
-    <script src="js\calories.js"></script>
+<!-- Link to your JavaScript file -->
+<script src="js\calories.js"></script>
 
 </body>
 </html>
