@@ -100,7 +100,9 @@ h2 {
     padding: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    background-color: #e2e2e2;
+    background-color: #25676B;
+  color: #fff;
+  border-radius: 10px;
 }
 
 /* Style for HR */
@@ -116,7 +118,10 @@ h2 {
     box-sizing: border-box;
     /* background-color: #25676B; */
     outline-style: dashed;
+    color: #25676B;
+  border-radius: 10px;
 }
+
 
 
   @media screen and (max-width: 768px) {
