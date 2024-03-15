@@ -70,10 +70,12 @@
     <h1>Selected Items:</h1>
     <hr>
 
+    <form id = "calorieChart">
+
     <h2>Selected Date:</h2>
     <div id="dateSelection">
         <label for="selectedDate">Select Date:</label>
-        <input type="date" id="selectedDate">
+        <input type="date" id="selectedDate" required>
     </div>
 
     <hr>
@@ -95,10 +97,36 @@
         <div id="progressBar"></div>
     </div>
 
-    <button id="confirmButton" class="button1">Add Calories</button>
+    <button type="submit" button class= "button1" id="confirmButton">Confirm Calories</button>
 </div>
 
+<div id = "calorieTableContainer">
+
+<table id="calorieTable">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Total Calories</th>
+            <th>Total Protein</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sleep data will be inserted here -->
+    </tbody>
+</table>
+
+<div class = "container">
+
+<canvas id="lineChart" width="800" height="400"></canvas>
+
+</div>
+
+</div>
+
+</form>
+
 <!-- Link to your JavaScript file -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js\calories.js"></script>
 
 </body>

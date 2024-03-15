@@ -217,6 +217,7 @@ h2 {
   background-color: rgb(250, 245, 245);
   border-radius: 1rem;
   padding:2rem;
+  margin-bottom: 5rem;
 }
 
 #calorieTrackingContainer {
@@ -224,7 +225,8 @@ h2 {
   float: left;
   margin-left:2rem;
   margin-top: 20px;
-  width: 43%;
+  margin-bottom: 2rem;
+  width: 40%;
   background-color: rgb(250, 245, 245);
   padding: 2rem;
   border-radius: 1rem;
@@ -280,3 +282,33 @@ margin-top: 30px;
   text-align: center;
   font-size: Arial;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #25676B;
+  color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#calorieTableContainer {
+  display: block;
+  margin: 20px auto; /* Center the container horizontally and provide space around it */
+  width: 80%; /* Adjust the width as needed */
+  padding: 20px; /* Add padding to provide space around the table */
+  background-color: white; /* Set the background color to white */
+  border-radius: 2rem;
+  overflow: hidden; /* Ensure that the container wraps around its content */
+}
+
+

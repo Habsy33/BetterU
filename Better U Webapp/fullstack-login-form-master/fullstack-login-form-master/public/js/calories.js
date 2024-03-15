@@ -101,8 +101,6 @@ function clearProgressBar() {
     progressPercentage.textContent = '0%';
 }
 
-
-
 function updateSelectedItemsList() {
     const selectedItemsList = document.getElementById('selectedItemsList');
     selectedItemsList.innerHTML = '';
@@ -131,7 +129,6 @@ function updateTotalCaloriesDisplay() {
     const totalProteinDisplay = document.getElementById('totalProtein');
     totalCaloriesDisplay.textContent = `Total Calories: ${Math.round(totalCalories)}kcal`;
     totalProteinDisplay.textContent = `Total Protein: ${Math.round(totalProtein)}g`;
-    
 }
 
 function clearResults() {
@@ -139,46 +136,94 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
-updateTotalCaloriesDisplay();
+// Add function to update line chart
+function updateLineChart(data) {
+    const dates = data.map(entry => entry.date);
+    const calories = data.map(entry => entry.calories);
 
-const clearListButton = document.getElementById('clearListButton');
-clearListButton.addEventListener('click', () => {
-    clearSelectedItemsList();
-});
+    const lineChartCanvas = document.getElementById('lineChart').getContext('2d');
 
-function clearSelectedItemsList() {
-    calorieInfo = [];
-    updateSelectedItemsList();
-    totalCalories = 0;
-    totalProtein = 0;
-    updateTotalCaloriesDisplay();
-    clearProgressBar();
+    new Chart(lineChartCanvas, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Total Calories',
+                data: calories,
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 1,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day' // Display one label per day
+                    },
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Total Calories'
+                    }
+                }
+            }
+        }
+    });
 }
 
-const setGoalButton = document.getElementById('setGoalButton');
-const dailyCalorieGoalInput = document.getElementById('dailyCalorieGoal');
+// Function to update the line chart whenever the table data changes
+function updateChartData() {
+    const tableRows = Array.from(document.querySelectorAll('#calorieTable tbody tr'));
+    const chartData = tableRows.map(row => {
+        const cells = Array.from(row.querySelectorAll('td'));
+        return {
+            date: cells[0].textContent,
+            calories: parseFloat(cells[1].textContent),
+            protein: parseFloat(cells[2].textContent)
+        };
+    });
+    updateLineChart(chartData);
+}
 
-setGoalButton.addEventListener('click', () => {
-    const userGoal = parseInt(dailyCalorieGoalInput.value);
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('calorieChart');
+    const table = document.getElementById('calorieTable').getElementsByTagName('tbody')[0];
 
-    if (!isNaN(userGoal) && userGoal > 0) {
-        // Update the daily calorie goal
-        dailyCalorieGoal = userGoal;
-        updateProgressBar(); // Update the progress bar with the new goal
-        alert(`Your daily calorie goal has been set to ${userGoal} kcal.`);
-    } else {
-        alert('Please enter a valid positive number for your daily calorie goal.');
-    }
+    // Event listener for the form submission
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        console.log("Form submitted"); // For debugging
 
-    // Add an event listener to the date input to update the date
-const selectedDateInput = document.getElementById('selectedDate');
-selectedDateInput.addEventListener('change', () => {
-    const selectedDate = selectedDateInput.value;
-    console.log(`Selected Date: ${selectedDate}`);
-    // Perform any actions you need with the selected date
-});
+        const date = document.getElementById('selectedDate').value;
+        const calories = totalCalories;
+        const protein = totalProtein;
 
+        // Insert data into the table
+        const newRow = table.insertRow();
+        const dateCell = newRow.insertCell(0);
+        const caloriesCell = newRow.insertCell(1);
+        const proteinCell = newRow.insertCell(2);
 
+        dateCell.textContent = date;
+        caloriesCell.textContent = calories;
+        proteinCell.textContent = Math.round(protein);
+
+        // Update the line chart
+        updateChartData();
+
+        // Clear the form inputs
+        form.reset();
+    });
+
+    // Call the function to update the line chart with initial data
+    updateChartData();
 });
 
 
