@@ -3,16 +3,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-size: 60px;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: normal;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -43,77 +33,67 @@ h2 {
 
 .menu li:first-child {
     margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(2) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(3) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(4) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
+    margin-top: -5px;
+    vertical-align: 15px;
 }
 
 .menu a {
     color: #fff;
     text-decoration: none;
-
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: auto;
-    margin-top: 50px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center
-}
-
-input[type=text] {
-    width: 100%;
-    font-size: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    border: solid;
-    border-color: #25676B;
-    padding: 10px;
-    background-color: white;
+#title {
+    text-align: center;
+    margin-top: 20px;
 }
 
 #map {
     height: 400px;
-    width: 70%;
-    float: right;
-  }
-  
-  #sidePanel {
-    width: 30%;
-    float: left;
+    width: 100%;
+}
+
+.search-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 300px;
     padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .gym-item {
-    cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.result-item {
     background-color: #f1f1f1;
-    padding: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #ddd;
+}
+
+.gym-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .gym-item:hover {
-    background-color: #ddd;
+    background-color: #eaeaea;
+  }
+  
+  .gym-number {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .gym-name {
+    color: #333;
   }
   

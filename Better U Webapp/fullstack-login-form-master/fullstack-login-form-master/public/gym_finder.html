@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Find Gyms</title>
-  <link rel="stylesheet" type="text/css" href="css/gym_finder.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find my Gym</title>
+    <link rel="stylesheet" href="css/gym_finder.css">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">
-        <div class="logo">
-            <img src="img/BetterU_logo.png" alt="BetterU logo">
-        </div>
-    </a>
-    <div class="menu-toggle">
-        <input type="checkbox" id="menu-btn">
-        <label for="menu-btn" class="menu-icon">&#9776;</label>
-    </div>
-    <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services_page.html">Services</a></li>
-        <li><a href="contact_page.html">Contact</a></li>
-        <li>
+    <nav class="navbar">
+        <a href="index.html">
             <div class="logo">
-                <a href="profile_page.html"><img src="img/profile_icon_updated.png" alt="Profile Icon"> </a>
+                <img src="img/BetterU_logo.png" alt="BetterU logo">
             </div>
-        </li>
-    </ul>
-  </nav>
+        </a>
+        <div class="menu-toggle">
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">&#9776;</label>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services_page.html">Services</a></li>
+            <li><a href="contact_page.html">Contact</a></li>
+            <li>
+                <div class="logo">
+                    <a href="profile_page.html"><img src="img/profile_icon_updated.png" alt="Profile Icon"></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+    <div id="title">
+        <h1>Find my Gym</h1>
+    </div>
 
+    <div id="map"></div>
 
-  <div id="sidePanel"></div>
-  <div id="map"></div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter a location...">
+        <div id="searchResults"></div>
+    </div>
 
-  <script src="js/gym_finder.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvc07s844SWYJFM7AmB3vxx_px_QKyXpo&libraries=places&callback=initMap" async defer></script>
+    <div id="sidePanel"></div>
 
-  <div class="search-box">
-    <input type="text" id="locationInput" placeholder="Enter a location...">
-    <button id="searchBtn">Search</button>
-  </div>
-
+    <script src="js/gym_finder.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvc07s844SWYJFM7AmB3vxx_px_QKyXpo&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
