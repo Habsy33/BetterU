@@ -93,55 +93,27 @@ input[type=text] {
     background-color: white;
 }
 
-.map {
-    width: 600px;
-    height: 450px;
-    border: 0;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center
-}
-
-.btns {
-    display: flex;
+#map {
+    height: 400px;
     width: 70%;
-    height: auto;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn {
-    width: 200px;
-    height: 52px;
-    border-radius: 10px;
-    color: #F9F8EB;
-    background: #25676B;
-    font-size: 20px;
-    padding: 15px;
-    transition: .5s;
-    align-items: right;
-    margin: auto;
-}
-
-.btn:hover {
-    color: #25676B;
-    background: #F9F8EB;
-}
-.back-button {
-    /* display: inline-block; */
-    margin: 20px;
-    margin-top: 20px;
-    margin-left: -1000px;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #2d9095;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    float: right;
   }
   
-  .back-button:hover {
-    background-color: #25676B;
+  #sidePanel {
+    width: 30%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
   }
+  
+  .gym-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color: #f1f1f1;
+    padding: 5px;
+  }
+  
+  .gym-item:hover {
+    background-color: #ddd;
+  }
+  

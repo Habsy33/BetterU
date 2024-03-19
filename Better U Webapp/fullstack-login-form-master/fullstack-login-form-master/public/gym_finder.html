@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Finder</title>
-    <link rel="stylesheet" href="css/gym_finder.css">
+  <title>Find Gyms</title>
+  <link rel="stylesheet" type="text/css" href="css/gym_finder.css">
 </head>
-<nav class="navbar">
+<body>
+  <nav class="navbar">
     <a href="index.html">
         <div class="logo">
-            <img src="img\BetterU_logo.png" alt="BetterU logo"> 
+            <img src="img/BetterU_logo.png" alt="BetterU logo">
         </div>
     </a>
-    <a href="tracker_page.html" class="back-button">&#8592; Back</a>
     <div class="menu-toggle">
         <input type="checkbox" id="menu-btn">
         <label for="menu-btn" class="menu-icon">&#9776;</label>
@@ -23,26 +20,25 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services_page.html">Services</a></li>
         <li><a href="contact_page.html">Contact</a></li>
-        <li><img>
+        <li>
             <div class="logo">
-                <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
+                <a href="profile_page.html"><img src="img/profile_icon_updated.png" alt="Profile Icon"> </a>
             </div>
         </li>
     </ul>
-</nav>
+  </nav>
 
-<div class="form">
-    <h1>Find a Gym</h1>
-    <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d35819.61053127145!2d-4.258507300000001!3d55.867426099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2suk!4v1709033058861!5m2!1ses!2suk"
-    class="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <input type="text" class="search" placeholder="Search Locations...">
-</div>
 
-<div class="btns">
-    <button class="btn">Home</button>
-    <button class="btn">Recent</button>
-    <button class="btn">Saved</button>
-</div>
+  <div id="sidePanel"></div>
+  <div id="map"></div>
 
+  <script src="js/gym_finder.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvc07s844SWYJFM7AmB3vxx_px_QKyXpo&libraries=places&callback=initMap" async defer></script>
+
+  <div class="search-box">
+    <input type="text" id="locationInput" placeholder="Enter a location...">
+    <button id="searchBtn">Search</button>
+  </div>
+
+</body>
 </html>
