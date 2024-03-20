@@ -287,6 +287,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  display: none;
 }
 th, td {
   padding: 10px;
@@ -308,7 +309,14 @@ tr:nth-child(even) {
   padding: 20px; /* Add padding to provide space around the table */
   background-color: white; /* Set the background color to white */
   border-radius: 2rem;
+  border: 2rem black;
   overflow: hidden; /* Ensure that the container wraps around its content */
 }
 
+#graphContainer {
+  border: 0.2rem solid #25676B; /* Black border around the container */
+  padding: 10px; /* Optional: Adds some space inside the container around the canvas */
+  border-radius: 10px; /* Optional: Rounds the corners of the border */
+  background-color: #ffffff; /* Optional: Sets a background color if desired */
+}
 

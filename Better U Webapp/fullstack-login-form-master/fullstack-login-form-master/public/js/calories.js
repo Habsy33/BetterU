@@ -2,6 +2,7 @@ const apiKey = '91fba15f828371be49e664a480b46cd8';
 const appId = '5748bd3a';
 const endpoint = 'https://api.edamam.com/api/food-database/v2/parser';
 const MAX_RESULTS = 12;
+let myLineChart;
 
 const searchInput = document.getElementById('foodInput');
 const searchButton = document.getElementById('searchButton');
@@ -136,14 +137,18 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
-// Add function to update line chart
 function updateLineChart(data) {
     const dates = data.map(entry => entry.date);
     const calories = data.map(entry => entry.calories);
+    const proteins = data.map(entry => entry.protein);
+
+    if (myLineChart) {
+        myLineChart.destroy();
+    }
 
     const lineChartCanvas = document.getElementById('lineChart').getContext('2d');
 
-    new Chart(lineChartCanvas, {
+    myLineChart = new Chart(lineChartCanvas, {
         type: 'line',
         data: {
             labels: dates,
@@ -151,32 +156,83 @@ function updateLineChart(data) {
                 label: 'Total Calories',
                 data: calories,
                 borderColor: 'rgb(255, 99, 132)',
-                borderWidth: 1,
-                fill: false
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderWidth: 2,
+                yAxisID: 'y-calories', // Associate this dataset with the first y-axis
+            }, {
+                label: 'Total Protein (g)',
+                data: proteins,
+                borderColor: 'rgb(54, 162, 235)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderWidth: 2,
+                yAxisID: 'y-protein', // Associate this dataset with the second y-axis
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     type: 'time',
                     time: {
-                        unit: 'day' // Display one label per day
+                        unit: 'day'
                     },
                     title: {
                         display: true,
                         text: 'Date'
                     }
                 },
-                y: {
+                'y-calories': {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
                     title: {
                         display: true,
-                        text: 'Total Calories'
+                        text: 'Calories'
+                    },
+                    ticks: {
+                        // Calibrate the scale for calories
+                        callback: function(value) {
+                            return value + 'kcal';
+                        }
                     }
+                },
+                'y-protein': {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Protein (g)'
+                    },
+                    // Align the grid line to the left axis
+                    grid: {
+                        drawOnChartArea: false, // Only show the grid for this axis on its side
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true, // This will make the legend icons circles
+                        pointStyle: 'circle', // Explicitly set the point style to circle
+                        padding: 20 // Optional: adjust padding between legend items
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
                 }
             }
         }
     });
 }
+
+
+
+
+
 
 // Function to update the line chart whenever the table data changes
 function updateChartData() {
@@ -220,10 +276,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Clear the form inputs
         form.reset();
+
+        // Reset selected items, total calories, and protein
+        clearSelectedItemsAndResetTotals();
     });
+});
+
+function clearSelectedItemsAndResetTotals() {
+    // Clear the selected items list
+    calorieInfo = []; // Reset the array
+    document.getElementById('selectedItemsList').innerHTML = ''; // Clear the list's HTML
+
+    // Reset total calories and protein to 0
+    totalCalories = 0;
+    totalProtein = 0;
+
+    // Update the display for total calories and protein
+    document.getElementById('totalCalories').textContent = `Total Calories: 0kcal`;
+    document.getElementById('totalProtein').textContent = `Total Protein: 0g`;
+
+    // Optionally, reset the progress bar
+    clearProgressBar();
+}
+
+function clearProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.width = '0%';
+    document.getElementById('progressPercentage').textContent = '0%';
+}
 
     // Call the function to update the line chart with initial data
     updateChartData();
-});
 
 
