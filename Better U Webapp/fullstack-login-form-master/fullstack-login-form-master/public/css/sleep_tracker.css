@@ -1,24 +1,8 @@
-/*body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../img/sleepTrackerBackground.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    backdrop-filter: blur(6px);
-}
-*/
-
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  background-image: url("../img/sleep.jpg");
   background-size: cover;
-  backdrop-filter: blur(6px);
 }
 
 .container {

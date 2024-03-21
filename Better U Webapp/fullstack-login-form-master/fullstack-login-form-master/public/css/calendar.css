@@ -263,3 +263,28 @@ a{
     margin: 40px auto;
     padding: 0 10px;
 }
+
+#calendarContainer {
+
+  width:60%;
+  float: left;
+  margin: 0 auto;
+}
+
+#addReminder {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  width: 40%;
+  height: 100%;
+  float: right;
+  background-color: white;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#addReminder h2 {
+  margin: 0; /* Override margins */
+}
+
+
