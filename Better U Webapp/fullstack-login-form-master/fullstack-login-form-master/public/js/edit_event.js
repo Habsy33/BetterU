@@ -1,23 +1,17 @@
-let isReminderSet = true; // Default state is true
-
-function toggleReminder() {
-    // Toggle the boolean value
-    isReminderSet = !isReminderSet;
-
-    // Update the button color based on the boolean value
-    const reminderButton = document.querySelector('.reminder');
-    reminderButton.style.backgroundColor = isReminderSet ? '#42BFC6' : '#FC5F3D';
-
-    // Log the boolean value to the console
-    console.log('Reminder Set:', isReminderSet);
-}
-
 function saveEvent() {
     // Get values from the input fields
-    const title = document.querySelector('.text').value;
-    const date = document.querySelector('.date').value;
-    const time = document.querySelector('.time').value;
-    const note = document.querySelector('.text.note').value;
+    const titleInput = document.querySelector('.text');
+    const dateInput = document.querySelector('.date');
+    const timeInput = document.querySelector('.time');
+    const noteInput = document.querySelector('.text.note');
+    const priorityInputs = document.querySelectorAll('input[name="priority"]');
+
+    const title = titleInput.value;
+    const date = dateInput.value;
+    const time = timeInput.value;
+    const note = noteInput.value;
+    // Get priority value
+    const priority = document.querySelector('input[name="priority"]:checked')?.value;
 
     if (!title || !date || !note) {
         alert('Please fill in all required fields (title, date, and note) before saving.');
@@ -42,18 +36,28 @@ function saveEvent() {
         date: date,
         time: time,
         note: note,
-        setReminder: isReminderSet
+        priority: priority || 'Not set', // Add priority to the event object
     };
 
     // Log the event object to the console
     console.log('Saved Event:', event);
 
-    // Display an alert confirming that the event has been logged
-    alert(`Event has been logged! The Reminder has been set: ${isReminderSet}`);
+    // Clear the form inputs
+    titleInput.value = '';
+    dateInput.value = '';
+    timeInput.value = '';
+    noteInput.value = '';
+    priorityInputs.forEach(input => { input.checked = false; });
+
+    // Display an alert confirming that the event has been saved
+    alert(`Event has been saved!`);
 }
 
-// Add the script tag to go back
 function goBack() {
     // Go back to the previous page
     window.history.back();
 }
+
+window.onload = function() {
+    console.log('Page loaded.');
+};

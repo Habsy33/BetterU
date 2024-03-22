@@ -13,6 +13,12 @@ body {
     font-size: 20px;
     font-weight: normal;
   }
+
+  p {
+
+    color: #25676B;
+
+  }
   
   .navbar {
     display: flex;
@@ -81,25 +87,28 @@ body {
 }
 
 .navigation-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 375px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 18px 20px; /* Adjust padding-top and padding-bottom */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 315px; /* Reduce the height of the white box */
+  overflow: hidden;
 }
 
+
 .navigation-box img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
+  width: 100%; /* Ensure the image takes the full width of its container */
+  height: 200px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
+
 
 .navigation-box:hover img {
     transform: scale(1.1);
@@ -109,7 +118,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: #25676B;;
     margin-top: auto;
 }
 
