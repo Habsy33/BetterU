@@ -127,6 +127,11 @@ p {
     background-color: #717171;
 }
 
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 .slideshow-container{
     position: relative;
     max-width: 800px;

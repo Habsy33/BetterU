@@ -28,6 +28,12 @@ h2 {
     color: #fff;
 }
 
+li a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+
 .logo img {
     max-height: 40px;
 }

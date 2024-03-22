@@ -22,6 +22,12 @@ body {
     background-color: #25676B;
     color: #fff;
   }
+
+  li a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
   
   .logo img {
     max-height: 40px;
