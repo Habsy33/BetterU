@@ -24,8 +24,10 @@ body {
   }
 
   li a.active {
-    background-color: #04AA6D;
-    color: white;
+  background-color: #3c898d;
+  color: white;
+  padding:0.7rem 1.6rem;
+  border-radius: 50%;
   }
   
   
