@@ -258,3 +258,33 @@ body {
 a{
   text-decoration: none;
 }
+
+button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: black; /* Set text color to black */
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Arial";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  touch-action: manipulation;
+  margin: 5px;
+  text-decoration: none;
+  position: absolute;
+  top: 8rem; /* Set the distance from the top */;
+}
+
+button:hover {
+  background-color: #11949b;
+  color: white;
+}
+
+
