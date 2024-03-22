@@ -32,20 +32,41 @@
         </ul>
     </nav>
 
+    <br><br>
+
     <div class="form">
-        <h1>Edit event</h1>
-        <button class="back_btn" onclick="goBack()">Back to reminders page</button>
+        <h1>Add Event</h1>
+   
         <br>
-    </br>
         <input type="text" placeholder="Add title" class="text" required>
         <input type="date" class="date" required>
+
+        <h2> Priority </h2>
+        
+        <div class="radio-container">
+            <input type="radio" id="low" name="priority" value="low" hidden>
+            <label for="low" class="radio-label">Low</label>
+        
+            <input type="radio" id="medium" name="priority" value="medium" hidden>
+            <label for="medium" class="radio-label">Medium</label>
+        
+            <input type="radio" id="high" name="priority" value="high" hidden>
+            <label for="high" class="radio-label">High</label>
+        </div>
+        
         <input type="time" class="time">
-        <button class="reminder" onclick="toggleReminder()">Set reminder</button>
         <input type="text" placeholder="Add note" class="text note" required>
-        <button class="save_btn" onclick="saveEvent()">Save</button>
+        
+
+        <div class="button-container">
+            <button class="save_btn" onclick="saveEvent()">Confirm Event</button>
+            <button class="back_btn" onclick="goBack()">Back to Calendar</button>
+        </div>        
+
     </div>
 
     <script src="js/edit_event.js"></script>
+
 </body>
 
 </html>

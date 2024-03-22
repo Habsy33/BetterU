@@ -1,103 +1,18 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    font-family: Arial, sans-serif;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
     background-size: cover;
 }
 
 .container {
     display: flex;
-}
-
-.navbar {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #25676B;
-    padding: 10px 20px;
-}
-
-.logo {
-    max-height: 40px;
-}
-
-h1 {
-    color: #25676B;
-}
-
-.form {
-    width: 90%;
-    height: auto;
-    margin-top: 50px;
-    margin-left: 60px;
-}
-
-input[type=text] {
-    width: 100%;
-    font-size: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    border: solid;
-    border-color: #25676B;
-    padding: 10px;
-
-}
-
-input[type=date] {
-    width: auto;
-    font-size: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    border: solid;
-    border-color: #25676B;
-    padding: 10px;
-}
-
-input[type=time] {
-    width: auto;
-    font-size: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    padding: 10px;
-    border: solid;
-    border-color: #25676B;
-    margin-left: 60px !important;
-}
-
-.reminder{
-    width: auto;
-    font-size: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    background:#42BFC6;
-    padding: 10px;
-    border: solid;
-    border-color: #25676B;
-    margin-left: 60px !important;
-}
-
-.note{
-height: 200px;
-}
-
-
-.save_btn{
-width: 250px;
-height: 62px;
-display: block;
-border-radius: 10px;
-color: #F9F8EB ;
-background: #25676B;
-font-size: 25px;
-padding: 15px;
-transition: .5s;
-align-items: right;
-}
-
-.save_btn:hover{
-    color: #25676B ;
-    background: #F9F8EB;
 }
 
 .navbar {
@@ -121,6 +36,115 @@ align-items: right;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center; /* Ensure vertical alignment is centered */
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #25676B;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+    .menu li:first-child {
+        margin-top: 0;
+    }
+    .menu-toggle input[type="checkbox"]:checked ~ .menu {
+        display: block;
+    }
+}
+
+
+h1 {
+    color: #25676B;
+    text-align: center;
+    font-size: 35pt;
+}
+
+h2 {
+    color: #25676B;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+input[type=text], input[type=date], input[type=time], .reminder, .note, .save_btn, .back_btn {
+    width: 60%;
+    font-size: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid;
+    border-color: #25676B;
+    display: block;
+}
+
+.save_btn, .back_btn {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    width: 250px;
+    height: 62px;
+    border-radius: 10px;
+    color: #F9F8EB;
+    background: #25676B;
+    font-size: 25px;
+    padding: 15px;
+    transition: .5s;
+}
+
+.save_btn:hover, .back_btn:hover {
+    color: #25676B;
+    background: #F9F8EB;
+}
+
+.logo img, .menu li img {
+    max-height: 40px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .menu li {
@@ -130,48 +154,60 @@ align-items: right;
 
 .menu li:first-child {
     margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(2) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(3) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
-}
-
-.menu li:nth-child(4) a {
-    margin-left: 0;
-    margin-top: -5px; /* Add a negative margin-top to move the text higher up */
-    vertical-align: 15px; /* Adjust the vertical alignment */
 }
 
 .menu a {
     color: #fff;
     text-decoration: none;
-
-}
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    height: 100%;
-
 }
 
 .navigation-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(45%, 1fr));
-    gap: 10px;
-    margin: 20px;
-    height: calc(100vh - 80px); /* Adjusted height considering the navigation bar height */
-    /* overflow-y: auto; Enable vertical scrolling if content overflows the container */
+    display: none; /* Adjust as necessary if this container is to be used */
 }
+
+.button-container {
+    display: flex;
+    justify-content: center; /* This centers the buttons in the container */
+    gap: 3rem; /* Optional: adds some space between the buttons */
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.radio-label {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.radio-label:hover {
+    background-color: #e0e0e0;
+}
+
+input[type="radio"]:checked + .radio-label {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Add custom colors for each label to indicate low, medium, high */
+#low:checked + .radio-label {
+    background-color: #4CAF50; /* Green for low */
+}
+
+#medium:checked + .radio-label {
+    background-color: #FFC107; /* Amber for medium */
+}
+
+#high:checked + .radio-label {
+    background-color: #F44336; /* Red for high */
+}
+
