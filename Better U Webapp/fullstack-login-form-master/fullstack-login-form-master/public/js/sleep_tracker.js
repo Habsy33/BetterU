@@ -82,14 +82,24 @@ document.addEventListener("DOMContentLoaded", function () {
     function displaySleepInsights(hoursSlept) {
         const insightsElement = document.getElementById('sleepInsights');
         insightsElement.innerHTML = ''; // Clear previous insights
-
+    
+        // Calculate hours and minutes slept
+        const hours = Math.floor(hoursSlept);
+        const minutes = Math.round((hoursSlept - hours) * 60);
+    
+        // Display hours slept
+        const sleepDuration = document.createElement('p');
+        sleepDuration.textContent = `You slept for ${hours} hours and ${minutes} minutes.`;
+        insightsElement.appendChild(sleepDuration);
+    
         // Add insights based on sleep duration
         if (hoursSlept < 7) {
-            insightsElement.innerHTML = '<p>Your sleep duration is lower than the recommended 7 hours for adults.</p>';
+            insightsElement.innerHTML += '<p>Your sleep duration is lower than the recommended 7 hours for adults.</p>';
         } else if (hoursSlept >= 7 && hoursSlept <= 9) {
-            insightsElement.innerHTML = '<p>Your sleep duration is within the recommended range of 7-9 hours for adults.</p>';
+            insightsElement.innerHTML += '<p>Your sleep duration is within the recommended range of 7-9 hours for adults.</p>';
         } else {
-            insightsElement.innerHTML = '<p>Your sleep duration is higher than the recommended 9 hours for adults.</p>';
+            insightsElement.innerHTML += '<p>Your sleep duration is higher than the recommended 9 hours for adults.</p>';
         }
     }
+    
 });

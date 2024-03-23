@@ -1,0 +1,35 @@
+HUNCHO you're literally him!
+
+
+
+- open up your terminal in cmd or vs code. 
+
+ - psql -U postgres
+
+ - write your password
+
+ - then \c loginforip3proj
+
+ - and follow the instructions below
+
+---------------------------------------------------------
+
+
+- add a new column to the users table called username, users who have already made an account without a username will be set at "not set":
+
+ALTER TABLE Users ADD COLUMN UserName VARCHAR(255) NOT NULL DEFAULT 'Not Set'
+
+------------------------------------------------------------------------------------
+
+- create the tables found in the database structure image on onedrive (dont worry about the upper cases, just hold shift + insert / copy and paste each line one at time)
+
+
+CREATE TABLE CalorieTable (ID SERIAL NOT NULL PRIMARY KEY, Date DATE NOT NULL, Calorie INT NOT NULL, Protein INT NOT NULL, Name VARCHAR(255) NOT NULL, FOREIGN KEY (UserID) REFERENCES Users(ID));
+
+CREATE TABLE SleepTracker (ID SERIAL NOT NULL PRIMARY KEY, Date DATE NOT NULL, HourSlept INT NOT NULL, Name VARCHAR(255) NOT NULL, FOREIGN KEY (ID) REFERENCES Users(ID));
+
+CREATE TABLE WorkoutTracker (ID SERIAL NOT NULL PRIMARY KEY, WorkoutID INT NOT NULL, Sets INT NOT NULL, Reps INT NOT NULL, Date DATE NOT NULL, FOREIGN KEY (ID) REFERENCES Users(ID));
+
+CREATE TABLE Reminders (ID SERIAL NOT NULL, ReminderID VARCHAR(50) PRIMARY KEY, Date DATE NOT NULL, ReminderName VARCHAR(255) NOT NULL, FOREIGN KEY (ID) REFERENCES Users(ID));
+
+CREATE TABLE Calendars (ID SERIAL NOT NULL PRIMARY KEY, EventID VARCHAR(50) NOT NULL, EventDate DATE NOT NULL, ReminderID VARCHAR(50), FOREIGN KEY (ReminderID) REFERENCES Reminders(ReminderID), FOREIGN KEY (ID) REFERENCES Users(ID));
