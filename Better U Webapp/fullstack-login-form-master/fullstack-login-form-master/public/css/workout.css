@@ -8,7 +8,7 @@ body {
 .navbar {
     background-color: #25676B;
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,73 +38,143 @@ body {
     text-decoration: none;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.container, #selectedExercisesContainer {
     background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px);
+    box-sizing: border-box;
 }
 
-h1, h2 {
-    text-align: center;
-    color: #333;
+#searchForm .form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-p {
-    text-align: center;
-    color: #666;
-}
-
-#workoutForm {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-select, input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+#searchForm select,
+#searchForm input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
 }
 
-button {
+#searchForm button {
+    padding: 20px 20px; /* Slightly reduced padding for the button */
+    font-size: 16px; /* Adjust font size for the button text if needed */
     background-color: #4caf50;
     color: #fff;
-    padding: 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    font-size: large;
 }
 
-button:hover {
+#searchForm button:hover {
     background-color: #45a049;
 }
 
-#workoutHistory {
-    margin-top: 30px;
+#searchResults, #selectedExercisesContainer {
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+#resultsList div, #selectedExercisesList li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
-li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+#resultsList div:hover, #selectedExercisesList li:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+#selectedExercisesContainer {
+    background-color: #fff; /* Light background to make the content pop */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space it out from the search form or results */
 }
 
-li:last-child {
-    border-bottom: none;
+/* Styling for individual selected exercise items */
+.selected-exercise-item {
+    display: flex;
+    justify-content: space-between; /* Space between the exercise details and the remove button */
+    align-items: center; /* Vertically center align the content */
+    padding: 10px;
+    margin-bottom: 10px; /* Space between items */
+    background-color: #f9f9f9; /* Slightly different background for distinction */
+    border-radius: 4px; /* Rounded corners for the items */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Softer shadow for each item */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for selected exercise items */
+.selected-exercise-item:hover {
+    background-color: #e9e9e9; /* Slightly darken on hover for interactive feedback */
+}
+
+/* Remove button styling */
+.removeExercise {
+    cursor: pointer;
+    background-color: #ff4d4d; /* A more alerting color for removal, can adjust based on theme */
+    color: white;
+    border: none;
+    padding: 5px 8px; /* Slightly reduced padding for a more compact look */
+    border-radius: 50%; /* Circular button */
+    font-weight: bold;
+    font-size: 14px; /* Adjust based on preference */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+/* Hover effect for remove button */
+.removeExercise:hover {
+    background-color: #cc0000; /* Darken the button on hover for feedback */
+}
+
+#searchForm input[type="number"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .container, #selectedExercisesContainer {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #searchForm .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

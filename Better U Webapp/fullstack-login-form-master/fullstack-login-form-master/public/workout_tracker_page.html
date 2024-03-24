@@ -11,7 +11,7 @@
     <nav class="navbar">
         <a href="index.html">
             <div class="logo">
-                <img src="img\BetterU_logo.png" alt="BetterU logo"> 
+                <img src="img/BetterU_logo.png" alt="BetterU logo"> 
             </div>
         </a>
         <div class="menu-toggle">
@@ -21,39 +21,48 @@
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services">Services</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="contact_page.html">Contact</a></li>
-            <li><img>
+            <li>
                 <div class="logo">
-                    <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
+                    <a href="profile_page.html"><img src="img/profile_icon_updated.png" alt="Profile Icon"></a>
                 </div>
             </li>
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Workout Tracker</h1>
-        <p>Track your workouts and stay fit!</p>
-
-        <!-- Workout Form -->
-        <div id="workoutForm">
-            <label for="workoutType">Select Workout:</label>
-            <select id="workoutType">
-                <option value="cardio">Cardio</option>
-                <option value="strength">Strength Training</option>
-                <option value="flexibility">Flexibility</option>
-            </select>
-
-            <label for="workoutDuration">Duration (minutes):</label>
-            <input type="number" id="workoutDuration" min="1" required>
-
-            <button id="saveWorkout">Save Workout</button>
+    <div class="main-content">
+        <div class="container">
+            <h1>Workout Tracker</h1>
+            <p>Discover exercises and track your workouts!</p>
+        
+            <div id="searchForm">
+                <!-- Search by Exercise Name -->
+                <div class="form-row">
+                    <input type="text" id="exerciseName" placeholder="Search by exercise name..." autocomplete="off">
+                </div>
+                
+                <!-- Duration in minutes -->
+                <div class="form-row">
+                    <label for="workoutDuration">Duration (minutes):</label>
+                    <input type="number" id="workoutDuration" placeholder="Enter duration in minutes" min="1" required>
+                </div>
+                
+                <!-- Search Button -->
+                <div class="form-row">
+                    <button id="searchExercises">Search</button>
+                </div>
+            </div>
+        
+            <div id="searchResults">
+                <h2>Searched Results</h2>
+                <div id="resultsList"></div>
+            </div>
         </div>
 
-        <!-- Workout History -->
-        <div id="workoutHistory">
-            <h2>Workout History</h2>
-            <ul id="historyList"></ul>
+        <div id="selectedExercisesContainer">
+            <h2>Selected Exercises</h2>
+            <ul id="selectedExercisesList"></ul>
         </div>
     </div>
 
