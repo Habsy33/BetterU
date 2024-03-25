@@ -287,7 +287,7 @@ button {
   margin: 5px;
   text-decoration: none;
   position: absolute;
-  top: 8rem; /* Set the distance from the top */;
+  top: 7.5rem; /* Set the distance from the top */;
 }
 
 button:hover {

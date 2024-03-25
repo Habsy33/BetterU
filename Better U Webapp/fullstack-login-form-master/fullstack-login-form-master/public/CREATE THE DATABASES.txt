@@ -15,9 +15,12 @@ HUNCHO you're literally him!
 ---------------------------------------------------------
 
 
-- add a new column to the users table called username, users who have already made an account without a username will be set at "not set":
+- add new column to the users table called username, users who have already made an account without a username will be set at "not set":
+- add new columns, gender and location, with the values not required to be set:
 
 ALTER TABLE Users ADD COLUMN UserName VARCHAR(255) NOT NULL DEFAULT 'Not Set'
+
+ALTER TABLE users ADD COLUMN gender VARCHAR(10), ADD COLUMN location VARCHAR(100);
 
 ------------------------------------------------------------------------------------
 

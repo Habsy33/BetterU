@@ -1,0 +1,72 @@
+/* Move notification bell styles inside the .navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #25676B;
+    color: #fff;
+    position: relative; /* Ensure relative positioning for absolute positioning of bell */
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute; /* Change position to absolute */
+    top: 7.5rem; /* Set the same top position as the logout button */
+    right: 85px; /* Set the same right position as the logout button */
+}
+
+
+.icon-button:hover {
+    cursor: pointer;
+}
+
+.icon-button__badge {
+    position: absolute;
+    top: -18px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+/* Adjust other styles as needed */
+.menu-toggle {
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}

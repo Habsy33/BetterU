@@ -6,6 +6,8 @@
     <title>Home Page</title>
 
     <link rel="stylesheet" href="css/homepage.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/test.css"> <!-- Include the notification bell CSS -->
 
 </head>
 <body>
@@ -24,10 +26,18 @@
             <li><a href="about.html">About</a></li>
             <li><a href="services_page.html">Services</a></li>
             <li><a href="contact_page.html">Contact</a></li>
-            <li><img>
-                <div class="logo">
-                    <a href="profile_page.html"><img src="img\profile_icon_updated.png" alt="Profile Icon"> </a>
-                </div>
+            <li>
+                <button type="button" class="icon-button">
+                    <span class="material-icons">notifications</span>
+                    <span class="icon-button__badge">2</span>
+                </button>
+            </li>
+            <li>
+                <a href="profile_page.html">
+                    <div class="logo">
+                        <img src="img\profile_icon_updated.png" alt="Profile Icon"> 
+                    </div>
+                </a>
             </li>
         </ul>
     </nav>
@@ -56,7 +66,6 @@
             <p>Calendar</p>
         </a>
     </div>
-       <script src="js/home.js"></script>
-
+    <script src="js/home.js"></script>
 </body>
 </html>
