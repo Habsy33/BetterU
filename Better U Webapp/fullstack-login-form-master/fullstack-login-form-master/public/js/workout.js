@@ -66,15 +66,39 @@ function displayResults(results) {
     });
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function addToSelectedExercises(exercise) {
     const selectedExercisesList = document.getElementById('selectedExercisesList');
-    const workoutDuration = document.getElementById('workoutDuration').value; // Capture the duration value
+    const weight = document.getElementById('workoutWeight').value; // Ensure this is corrected in your HTML
+    const reps = document.getElementById('workoutReps').value; // Ensure this is corrected in your HTML
+
+    //Checks if there is a weight variable
+
+    if (!weight || weight <= 0 || !reps || reps <= 0) {
+        alert('You must enter a value for both weight and reps');
+        return; // Stop the function if validation fails
+    }
 
     const exerciseLi = document.createElement('li');
     exerciseLi.className = 'selected-exercise-item';
-    // Include the workout duration in the displayed information
+
+    // Set display variables
+    const type = capitalizeFirstLetter(exercise.type);
+    const muscle = capitalizeFirstLetter(exercise.muscle);
+    const difficulty = capitalizeFirstLetter(exercise.difficulty);
+    const weightDisplay = weight ? `${weight}kg` : '';
+    const repsDisplay = reps ? `${reps}reps` : '';
+
+    // Updated HTML structure with capitalized values
     exerciseLi.innerHTML = `
-        ${exercise.name} - Type: ${exercise.type}, Muscle: ${exercise.muscle}, Difficulty: ${exercise.difficulty}, Duration: ${workoutDuration} minutes
+        <h3>${exercise.name}</h3>
+        <hr>
+        <div class="exercise-details">
+            ${type}    ${muscle}  ${difficulty}  ${weightDisplay}   ${repsDisplay}
+        </div>
         <button class="removeExercise">&#10006;</button>
     `;
 
@@ -86,3 +110,4 @@ function addToSelectedExercises(exercise) {
         exerciseLi.remove();
     });
 }
+
