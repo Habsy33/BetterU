@@ -257,22 +257,32 @@ a{
   text-decoration: none;
 }
 
-.previous-workout-box {
-  background-color: #fff;
-  border-radius: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 30px;
-  text-align: center;
+.tracker-info-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensure flex items wrap to the next line if there isn't enough space */
+  justify-content: center; /* Center the flex items horizontally */
+  align-items: center; /* Center the flex items vertically */
+  margin-top: 20px;
 }
 
-.previous-workout-box h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.tracker-info {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust width to fit three items in a row with 20px gap */
+  padding: 20px; /* Add padding for spacing within the box */
+  text-align: center; /* Center text horizontally */
+  margin: 10px; /* Add margin to create space between items */
+  background-color: #fff; /* Set background color */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border: 1px solid #ddd; /* Add border for separation */
+}
+
+.tracker-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px; /* Increase margin for spacing between heading and paragraph */
   color: #25676B;
 }
 
-.previous-workout-box p {
-  font-size: 16px;
+.tracker-info p {
+  font-size: 14px;
   color: #555;
 }
