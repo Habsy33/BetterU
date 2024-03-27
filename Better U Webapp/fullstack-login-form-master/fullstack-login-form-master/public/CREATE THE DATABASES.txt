@@ -26,8 +26,8 @@ ALTER TABLE users ADD COLUMN gender VARCHAR(10), ADD COLUMN location VARCHAR(100
 
 -add this column into your tables
 
-ALTER TABLE RemindersADD COLUMN priority INTEGER CHECK (priority IN (1, 2, 3));
-
+ALTER TABLE Reminders ADD COLUMN priority INTEGER CHECK (priority IN (1, 2, 3));
+ALTER TABLE Reminders ADD COLUMN note VARCHAR(255) NOT NULL;
 
 ------------------------------------------------------------------------------------
 

@@ -1,3 +1,15 @@
+const knex = require('knex');
+
+const db = knex({
+    client: 'pg',
+    connection: {
+        host: '127.0.0.1',
+        user: 'postgres',
+        password: '.',
+        database: 'loginforip3proj'
+    }
+});
+
 function saveEvent() {
     // Get values from the input fields
     const titleInput = document.querySelector('.text');
@@ -42,6 +54,23 @@ function saveEvent() {
     // Log the event object to the console
     console.log('Saved Event:', event);
 
+    // Save the event data to the Reminders table
+    db('Reminders')
+        .insert({
+            ReminderID: null, // Assuming ReminderID is auto-generated
+            Date: date,
+            ReminderName: title,
+            Priority: priority,
+            UserID: null, // You need to specify the user ID here
+            Note: note
+        })
+        .then(() => {
+            console.log('Event saved to the Reminders table.');
+        })
+        .catch(err => {
+            console.error('Error saving event to the Reminders table:', err);
+        });
+
     // Clear the form inputs
     titleInput.value = '';
     dateInput.value = '';
@@ -52,12 +81,3 @@ function saveEvent() {
     // Display an alert confirming that the event has been saved
     alert(`Event has been saved!`);
 }
-
-function goBack() {
-    // Go back to the previous page
-    window.history.back();
-}
-
-window.onload = function() {
-    console.log('Page loaded.');
-};
