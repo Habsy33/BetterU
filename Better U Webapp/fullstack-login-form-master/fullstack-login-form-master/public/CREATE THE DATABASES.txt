@@ -24,6 +24,13 @@ ALTER TABLE users ADD COLUMN gender VARCHAR(10), ADD COLUMN location VARCHAR(100
 
 ------------------------------------------------------------------------------------
 
+-add this column into your tables
+
+ALTER TABLE RemindersADD COLUMN priority INTEGER CHECK (priority IN (1, 2, 3));
+
+
+------------------------------------------------------------------------------------
+
 - create the tables found in the database structure image on onedrive (dont worry about the upper cases, just hold shift + insert / copy and paste each line one at time)
 
 
