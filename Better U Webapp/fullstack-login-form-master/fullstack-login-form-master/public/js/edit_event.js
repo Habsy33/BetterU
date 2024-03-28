@@ -5,6 +5,7 @@ function saveEvent() {
     const timeInput = document.querySelector('.time');
     const noteInput = document.querySelector('.text.note');
     const priorityInputs = document.querySelectorAll('input[name="priority"]');
+    const userId = 5;
 
     const title = titleInput.value;
     const date = dateInput.value;
@@ -32,12 +33,33 @@ function saveEvent() {
 
     // Create an object to represent the event
     const event = {
-        title: title,
+        id: userId,
+        reminderId: 1,
         date: date,
-        time: time,
-        note: note,
-        priority: priority || 'Not set', // Add priority to the event object
+        remindername:title,
+        priority: priority,
+        note: note
     };
+
+// Replace the console.log with this fetch request
+fetch('/edit-event', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(event),
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+    alert(`Event has been saved!`); // You can keep or modify this alert based on response
+    // Clear form or redirect user here if desired
+})
+.catch((error) => {
+    console.error('Error:', error);
+});
+
+
 
     // Log the event object to the console
     console.log('Saved Event:', event);
