@@ -73,7 +73,7 @@ app.post('/login-user', (req, res) => {
     })
 })
 
-app.post('/edit-event', (req, res) => {
+app.post('/add-event', (req, res) => {
     const { id, reminderId, date, remindername, priority, note } = req.body;
     console.log("Received data:", req.body);
 

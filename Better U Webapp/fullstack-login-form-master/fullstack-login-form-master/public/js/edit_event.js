@@ -42,7 +42,7 @@ function saveEvent() {
     };
 
 // Replace the console.log with this fetch request
-fetch('/edit-event', {
+fetch('/add-event', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
