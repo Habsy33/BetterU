@@ -48,20 +48,9 @@
 
     </div>
 
-    <!-- Tracker Info Container -->
     <div class="tracker-info-container">
-        <!-- Previous Workout Stats -->
-        <div class="tracker-info">
-            <h3>Previous Workout Stats</h3>
-            <p>Your previous workout stats will be shown here...</p>
-        </div>
-
-        <!-- Your Calorie Breakdown -->
-        <div class="tracker-info">
-            <h3>Your Calorie Breakdown</h3>
-            <p>Your calorie breakdown will be shown here...</p>
-        </div>
-
+   
+    
         <!-- Your Sleep Stats -->
         <div class="tracker-info">
             <h3>Your Sleep Stats</h3>
@@ -80,10 +69,31 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Previous Workout Stats -->
+        <div class="tracker-info">
+            <!-- Saved Workouts -->
+            <h3>Saved Workouts</h3>
+            <ul id="savedWorkoutsList"></ul>
+        </div>
+
+        <!-- Your Calorie Breakdown -->
+        <div class="tracker-info">
+            <h3>Your Calories Breakdown</h3>
+            <p>Selected Date: <span id="calorieBreakdownDate"></span></p>
+            <div id="selectedItemsList">
+                <!-- Selected items will be inserted here -->
+            </div>
+            <p id="totalCalories">Total Calories: 0 kcal</p>
+            <p id="totalProtein">Total Protein: 0 g</p>
+        </div>
+
     </div>
 
     <!-- Script tag to reference the JavaScript file for the sleep tracker -->
     <script src="js/savedsleep.js"></script>
+    <script src="js/savedcalories.js"></script>
+    <script src="js/savedworkout.js"></script>
         
 </body>
 </html>

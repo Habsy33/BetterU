@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-
+    <title>Fitness Page</title>
     <link rel="stylesheet" href="css/fitness_page.css">
-
 </head>
 <body>
     <nav class="navbar">
@@ -45,9 +43,17 @@
 
     <!-- Previous Workout Stats Box -->
     <div class="previous-workout-box">
-        <h2>Previous Workout Stats</h2>
-        <p>Your previous workout stats will be shown here...</p>
+        <!-- Tracker Info Container -->
+        <div class="tracker-info-container">
+            <!-- Saved Workouts -->
+            <div class="tracker-info">
+                <h2>Previous Workout Stats</h2>
+                <ul id="savedWorkoutsList"></ul>
+            </div>
+        </div>
     </div>
+
+    <script src="js/savedworkout.js"></script>
 
 </body>
 </html>

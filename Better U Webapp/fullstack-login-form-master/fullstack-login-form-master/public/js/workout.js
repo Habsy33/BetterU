@@ -111,3 +111,24 @@ function addToSelectedExercises(exercise) {
     });
 }
 
+// Add event listener to the "Save Workouts" button
+document.getElementById('saveWorkouts').addEventListener('click', function() {
+    saveWorkoutsToSessionStorage();
+});
+
+function saveWorkoutsToSessionStorage() {
+    const selectedExercisesList = document.getElementById('selectedExercisesList');
+    const selectedExercises = selectedExercisesList.querySelectorAll('.selected-exercise-item');
+    const workouts = [];
+
+    selectedExercises.forEach(exercise => {
+        const name = exercise.querySelector('h3').textContent;
+        const details = exercise.querySelector('.exercise-details').textContent;
+        workouts.push({ name, details });
+    });
+
+    sessionStorage.setItem('savedWorkouts', JSON.stringify(workouts));
+
+    // Alert user that workouts have been saved
+    alert('Your workouts have been saved!');
+}

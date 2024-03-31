@@ -248,14 +248,112 @@ function updateChartData() {
     updateLineChart(chartData);
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Retrieve saved calorie tracker data from session storage
+//     const savedCalorieTrackerData = sessionStorage.calorieTrackerData ? JSON.parse(sessionStorage.calorieTrackerData) : {};
+
+//     // Populate previously saved data (if any)
+//     document.getElementById('selectedDate').value = savedCalorieTrackerData.selectedDate || '';
+
+//     // Display previously saved selected items (if any)
+//     if (savedCalorieTrackerData.calorieInfo) {
+//         calorieInfo = savedCalorieTrackerData.calorieInfo;
+//         updateSelectedItemsList();
+//         totalCalories = savedCalorieTrackerData.totalCalories || 0;
+//         totalProtein = savedCalorieTrackerData.totalProtein || 0;
+//         updateTotalCaloriesDisplay();
+//         updateProgressBar();
+//     }
+
+//     const form = document.getElementById('calorieChart');
+//     const table = document.getElementById('calorieTable').getElementsByTagName('tbody')[0];
+
+//     // Event listener for the form submission
+//     form.addEventListener('submit', function (event) {
+//         event.preventDefault();
+
+//         const date = document.getElementById('selectedDate').value;
+//         const calories = totalCalories;
+//         const protein = totalProtein;
+
+//         // Insert data into the table
+//         const newRow = table.insertRow();
+//         const dateCell = newRow.insertCell(0);
+//         const caloriesCell = newRow.insertCell(1);
+//         const proteinCell = newRow.insertCell(2);
+
+//         dateCell.textContent = date;
+//         caloriesCell.textContent = calories;
+//         proteinCell.textContent = Math.round(protein);
+
+//         // Save data to session storage
+//         const calorieTrackerData = {
+//             selectedDate: date,
+//             calorieInfo: calorieInfo,
+//             totalCalories: calories,
+//             totalProtein: protein
+//         };
+//         sessionStorage.calorieTrackerData = JSON.stringify(calorieTrackerData);
+
+//         // Clear the form inputs
+//         form.reset();
+
+//         // Reset selected items, total calories, and protein
+//         clearSelectedItemsAndResetTotals();
+//     });
+// });
+
+
+// function clearSelectedItemsAndResetTotals() {
+//     // Clear the selected items list
+//     calorieInfo = []; // Reset the array
+//     document.getElementById('selectedItemsList').innerHTML = ''; // Clear the list's HTML
+
+//     // Reset total calories and protein to 0
+//     totalCalories = 0;
+//     totalProtein = 0;
+
+//     // Update the display for total calories and protein
+//     document.getElementById('totalCalories').textContent = `Total Calories: 0kcal`;
+//     document.getElementById('totalProtein').textContent = `Total Protein: 0g`;
+
+//     // Optionally, reset the progress bar
+//     clearProgressBar();
+// }
+
+// function clearProgressBar() {
+//     const progressBar = document.getElementById('progressBar');
+//     progressBar.style.width = '0%';
+//     document.getElementById('progressPercentage').textContent = '0%';
+// }
+
+//     // Call the function to update the line chart with initial data
+//     updateChartData();
+
+
 document.addEventListener("DOMContentLoaded", function () {
+    // Retrieve saved calorie tracker data from session storage
+    const savedCalorieTrackerData = sessionStorage.calorieTrackerData ? JSON.parse(sessionStorage.calorieTrackerData) : {};
+
+    // Populate previously saved data (if any)
+    document.getElementById('selectedDate').value = savedCalorieTrackerData.selectedDate || '';
+
+    // Display previously saved selected items (if any)
+    if (savedCalorieTrackerData.calorieInfo) {
+        calorieInfo = savedCalorieTrackerData.calorieInfo;
+        updateSelectedItemsList();
+        totalCalories = savedCalorieTrackerData.totalCalories || 0;
+        totalProtein = savedCalorieTrackerData.totalProtein || 0;
+        updateTotalCaloriesDisplay();
+        updateProgressBar();
+    }
+
     const form = document.getElementById('calorieChart');
     const table = document.getElementById('calorieTable').getElementsByTagName('tbody')[0];
 
     // Event listener for the form submission
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        console.log("Form submitted"); // For debugging
 
         const date = document.getElementById('selectedDate').value;
         const calories = totalCalories;
@@ -271,14 +369,23 @@ document.addEventListener("DOMContentLoaded", function () {
         caloriesCell.textContent = calories;
         proteinCell.textContent = Math.round(protein);
 
-        // Update the line chart
-        updateChartData();
+        // Save data to session storage
+        const calorieTrackerData = {
+            selectedDate: date,
+            calorieInfo: calorieInfo,
+            totalCalories: calories,
+            totalProtein: protein
+        };
+        sessionStorage.calorieTrackerData = JSON.stringify(calorieTrackerData);
 
         // Clear the form inputs
         form.reset();
 
         // Reset selected items, total calories, and protein
         clearSelectedItemsAndResetTotals();
+
+        // Update the line chart
+        updateChartData();
     });
 });
 
@@ -304,8 +411,3 @@ function clearProgressBar() {
     progressBar.style.width = '0%';
     document.getElementById('progressPercentage').textContent = '0%';
 }
-
-    // Call the function to update the line chart with initial data
-    updateChartData();
-
-

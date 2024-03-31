@@ -206,6 +206,7 @@ transition: transform 0.3s ease;
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
+      text-align: center;
   }
   
   header {
@@ -258,23 +259,25 @@ text-decoration: none;
 }
 
 .tracker-info-container {
-display: flex;
-flex-wrap: wrap; /* Ensure flex items wrap to the next line if there isn't enough space */
-justify-content: center; /* Center the flex items horizontally */
-align-items: center; /* Center the flex items vertically */
-margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Ensure flex items wrap to the next line if there isn't enough space */
+  justify-content: center; /* Center the flex items horizontally */
+  align-items: flex-start; /* Align items to the start of the cross axis (vertically) */
+  margin-top: 20px;
 }
 
 .tracker-info {
-flex: 0 0 calc(33.33% - 20px); /* Adjust width to fit three items in a row with 20px gap */
-padding: 20px; /* Add padding for spacing within the box */
-text-align: center; /* Center text horizontally */
-margin: 10px; /* Add margin to create space between items */
-background-color: #fff; /* Set background color */
-border-radius: 8px; /* Add border radius for rounded corners */
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-border: 1px solid #ddd; /* Add border for separation */
+  flex: 0 0 calc(33.33% - 20px); /* Adjust width to fit three items in a row with 20px gap */
+  max-width: 300px; /* Added max-width to prevent stretching on larger screens */
+  padding: 20px; /* Add padding for spacing within the box */
+  text-align: center; /* Center text horizontally */
+  margin: 10px; /* Add margin to create space between items */
+  background-color: #fff; /* Set background color */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border: 1px solid #ddd; /* Add border for separation */
 }
+
 
 .tracker-info h3 {
 font-size: 18px;
