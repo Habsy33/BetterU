@@ -186,3 +186,47 @@ body {
         align-items: stretch;
     }
 }
+
+/* .save-workouts-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #25676B;
+    color: #25676B;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.save-workouts-btn:hover {
+    background-color: #5c8b8d;
+} */
+
+.save-workouts-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #25676B;
+    color: #25676B;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove outline */
+}
+
+.save-workouts-btn:hover {
+    background-color: #5c8b8d;
+}
+
