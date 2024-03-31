@@ -54,6 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const hours = Math.floor(milliseconds / (1000 * 60 * 60));
         const minutes = Math.floor((milliseconds % (1000 * 60 * 60)) / (1000 * 60));
 
+            // Save sleep data to session storage
+        const sleepData = {
+            date: date,
+            sleepTime: sleepTime,
+            wakeUpTime: wakeUpTime,
+            hoursSlept: hours + minutes / 60
+        };
+
+        if (!sessionStorage.sleepRecords) {
+            sessionStorage.sleepRecords = JSON.stringify([sleepData]);
+        } else {
+            const sleepRecords = JSON.parse(sessionStorage.sleepRecords);
+            sleepRecords.push(sleepData);
+            sessionStorage.sleepRecords = JSON.stringify(sleepRecords);
+        }
+
         // Update chart data
         myChart.data.labels.push(date);
         myChart.data.datasets[0].data.push(hours + minutes / 60);

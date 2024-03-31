@@ -65,9 +65,25 @@
         <!-- Your Sleep Stats -->
         <div class="tracker-info">
             <h3>Your Sleep Stats</h3>
-            <p>Your sleep stats will be shown here...</p>
+            <!-- Table for displaying sleep records -->
+            <table id="sleepRecordsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Sleep Time</th>
+                        <th>Wake Up Time</th>
+                        <th>Hours Slept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sleep records will be inserted here -->
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <!-- Script tag to reference the JavaScript file for the sleep tracker -->
+    <script src="js/savedsleep.js"></script>
         
 </body>
 </html>

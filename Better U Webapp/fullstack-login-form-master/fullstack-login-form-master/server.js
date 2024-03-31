@@ -73,36 +73,36 @@ app.post('/login-user', (req, res) => {
     })
 })
 
-app.post('/add-event', (req, res) => {
-    const { id, reminderId, date, remindername, priority, note } = req.body;
-    console.log("Received data:", req.body);
+// app.post('/add-event', (req, res) => {
+//     const { id, reminderId, date, remindername, priority, note } = req.body;
+//     console.log("Received data:", req.body);
 
-    // Assuming you have logic to generate or handle reminderId, etc.
-    // Replace the placeholder logic with your actual database operation
-    db('reminders').insert({
-        // Make sure these column names match your table's column names
-        id: id,
-        reminderid: reminderId,
-        date: date,
-        remindername: remindername,
-        priority: priority,
-        note: note
-    })
-    .returning('*')
-    .then(response => {
-        console.log("Database response:", response);
-        res.json({ success: true, message: "Reminder added successfully", data: response });
-    })
-    .catch(err => {
-        console.error("Database error:", err);
-        res.status(500).json({ success: false, message: "Error adding reminder", error: err });
-    });
-});
+//     // Assuming you have logic to generate or handle reminderId, etc.
+//     // Replace the placeholder logic with your actual database operation
+//     db('reminders').insert({
+//         // Make sure these column names match your table's column names
+//         id: id,
+//         reminderid: reminderId,
+//         date: date,
+//         remindername: remindername,
+//         priority: priority,
+//         note: note
+//     })
+//     .returning('*')
+//     .then(response => {
+//         console.log("Database response:", response);
+//         res.json({ success: true, message: "Reminder added successfully", data: response });
+//     })
+//     .catch(err => {
+//         console.error("Database error:", err);
+//         res.status(500).json({ success: false, message: "Error adding reminder", error: err });
+//     });
+// });
 
 
-app.post('/edit-event', (req, res) => {
-    res.json({success: true, message: "Route is working"});
-});
+// app.post('/edit-event', (req, res) => {
+//     res.json({success: true, message: "Route is working"});
+// });
 
 app.listen(3000, (req, res) => {
     console.log('listening on port 3000......')
