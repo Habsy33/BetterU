@@ -1,7 +1,3 @@
-The login and register backend has beeen done.
+Use Node.js to load up the application
 
-Frontend is up to you guys now.
-
-jamie and habeeb will do the backend for complex stuff like apis etc
-
-make sure to use sensible commits, dont just write random shit
+Install postgress 4 for database functionality and use the database.txt file in main for lines of code to create database
